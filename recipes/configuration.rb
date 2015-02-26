@@ -21,8 +21,9 @@ template "#{node['crowd']['home_path']}/crowd.properties" do
 end
 
 # crowd-webapp/WEB-INF/classes/crowd-init.properties
-template "#{node['crowd']['home_path']}/crowd.cfg.xml" do
-  source 'crowd.cfg.xml.erb'
-  mode '0644'
-  only_if { node['crowd']['install_type'] == 'standalone' }
-end
+# TODO for future?
+# template "#{node['crowd']['home_path']}/crowd.cfg.xml" do
+#   source 'crowd.cfg.xml.erb'
+#   mode '0644'
+#   only_if { node['crowd']['install_type'] == 'standalone' }
+# end

@@ -5,10 +5,10 @@
 
 session.lastvalidation=session.lastvalidation
 session.tokenkey=session.tokenkey
-crowd.server.url=http\://<%= node['crowd']['apache2']['virtual_host_name'] %>\:<%= node['crowd']['tomcat']['port'] %>/<%= node['crowd']['context_path'] %>/services/
+crowd.server.url=http\://<%= node['crowd']['apache2']['virtual_host_name'] %>\:<%= node['crowd']['tomcat']['port'] %>/<%= node['crowd']['context'] %>/services/
 application.name=<%= node['crowd']['applicationname'] %>
 http.timeout=30000
 session.isauthenticated=session.isauthenticated
-application.login.url=http\://<%= node['crowd']['apache2']['virtual_host_name'] %>\:<%= node['crowd']['tomcat']['port'] %>/<%= node['crowd']['context_path'] %>
+application.login.url=http\://<%= node['crowd']['apache2']['virtual_host_name'] %>\:<%= node['crowd']['tomcat']['port'] %>/<%= node['crowd']['context'] %>
 session.validationinterval=0
 application.password=<%= node['crowd']['applicationpwd'] %>
