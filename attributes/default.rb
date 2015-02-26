@@ -8,9 +8,9 @@ default['crowd']['backup_when_update'] = false
 default['crowd']['ssl']                = false
 
 default['crowd']['applicationname']    = 'crowd'
-default['crowd']['applicationpwd']     = 'pvU5O8pKCtZSWaswwuB320'
-default['crowd']['serverid']           = 'B0HV-EENG-WZF9-WMB7'
-default['crowd']['license']            = 'pqpmpIcvdEiWptqekkhToxBlOPNDXHDqXLRXbXrkMOPoAAq mj2K5ymtg&lt;cYFA8HS6g1gUEP2L0KXWXTIABu4vD1qzcJr8P nqoWTooprrnmPrNMnRUtrRPoOnOPQoMROSSuvURtSProoqs qnUUnqnvurummmmmmUUnqnvurummmmmmUUBCDWUUnmmmm'
+default['crowd']['applicationpwd']     = ''
+default['crowd']['serverid']           = ''
+default['crowd']['license']            = ''
 
 default['java']['jdk_version'] = '7'
 
