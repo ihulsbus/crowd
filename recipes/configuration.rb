@@ -10,6 +10,8 @@ end
 template "#{node['crowd']['install_path']}/crowd-webapp/WEB-INF/classes/crowd-init.properties" do
   source 'crowd-init.properties.erb'
   mode '0644'
+  owner node['crowd']['user']
+  group node['crowd']['user']
   only_if { node['crowd']['install_type'] == 'standalone' }
 end
 
@@ -17,6 +19,8 @@ end
 template "#{node['crowd']['home_path']}/crowd.properties" do
   source 'crowd.properties.erb'
   mode '0644'
+  owner node['crowd']['user']
+  group node['crowd']['user']
   only_if { node['crowd']['install_type'] == 'standalone' }
 end
 

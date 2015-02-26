@@ -33,6 +33,7 @@ case settings['database']['type']
 #     action [:create, :grant]
 #   end
 when 'postgresql'
+  include_recipe 'build_essential'
   include_recipe 'postgresql::server'
   include_recipe 'database::postgresql'
   database_connection.merge!(:username => 'postgres', :password => node['postgresql']['password']['postgres'])

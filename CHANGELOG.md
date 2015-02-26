@@ -3,6 +3,12 @@ crowd CHANGELOG
 
 This file is used to list changes made in each version of the crowd cookbook.
 
+0.1.2
+-----
+
+- [Martijn] - Fix permissions issue for property files
+- [Martijn] - Add dependency on build-essential
+
 0.1.1
 -----
 
