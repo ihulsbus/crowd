@@ -42,8 +42,7 @@ when 'debian'
 end
 # rubocop:enable BlockNesting
 
-default['crowd']['apache2']['access_log']
-else      = ''
+default['crowd']['apache2']['access_log']         = ''
 default['crowd']['apache2']['error_log']          = ''
 default['crowd']['apache2']['port']               = 80
 default['crowd']['apache2']['virtual_host_alias'] = node['fqdn']
