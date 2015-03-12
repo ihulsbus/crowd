@@ -4,7 +4,7 @@ maintainer_email 'martijn.vanderkleijn@klm.com'
 license          'MIT'
 description      'Installs/Configures Atlassian Crowd'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '0.1.4'
+version          '0.1.5'
 
 recipe 'crowd', 'Installs/configures Atlassian CROWD'
 recipe 'crowd::apache2', 'Installs/configures Apache 2 as proxy (ports 80/443)'
@@ -19,7 +19,7 @@ depends 'database'
 depends 'java'
 # depends 'mysql'
 # depends 'mysql_connector'
-depends 'postgresql', '~> 3.4.19'
+depends 'postgresql', '~> 3.4.18'
 
 suggests 'tomcat'
 
