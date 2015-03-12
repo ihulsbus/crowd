@@ -19,7 +19,7 @@ depends 'database'
 depends 'java'
 # depends 'mysql'
 # depends 'mysql_connector'
-depends 'postgresql'
+depends 'postgresql', '~> 3.4.19'
 
 suggests 'tomcat'
 
