@@ -31,6 +31,7 @@ template "/var/run/crowd.pid" do
   owner node['crowd']['user']
   group node['crowd']['user']
   only_if { node['crowd']['install_type'] == 'standalone' }
+  not_if { File.exist?('/var/run/crowd.pid') }
 end
 
 # template "#{node['crowd']['home_path']}/crowd.properties" do
