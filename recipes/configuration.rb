@@ -15,6 +15,14 @@ template "#{node['crowd']['install_path']}/crowd-webapp/WEB-INF/classes/crowd-in
   only_if { node['crowd']['install_type'] == 'standalone' }
 end
 
+template "#{node['crowd']['install_path']}/apache-tomcat/bin/setenv.sh" do
+  source 'setenv.sh.erb'
+  mode '0744'
+  owner node['crowd']['user']
+  group node['crowd']['user']
+  only_if { node['crowd']['install_type'] == 'standalone' }
+end
+
 # template "#{node['crowd']['home_path']}/crowd.properties" do
 #   source 'crowd.properties.erb'
 #   mode '0644'
