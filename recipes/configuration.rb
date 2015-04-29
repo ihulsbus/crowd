@@ -13,6 +13,7 @@ template "#{node['crowd']['install_path']}/crowd-webapp/WEB-INF/classes/crowd-in
   owner node['crowd']['user']
   group node['crowd']['user']
   only_if { node['crowd']['install_type'] == 'standalone' }
+  notifies :restart, 'service[crowd]', :delayed
 end
 
 template "#{node['crowd']['install_path']}/apache-tomcat/bin/setenv.sh" do
@@ -21,6 +22,7 @@ template "#{node['crowd']['install_path']}/apache-tomcat/bin/setenv.sh" do
   owner node['crowd']['user']
   group node['crowd']['user']
   only_if { node['crowd']['install_type'] == 'standalone' }
+  notifies :restart, 'service[crowd]', :delayed
 end
 
 # template "#{node['crowd']['home_path']}/crowd.properties" do
