@@ -1,6 +1,7 @@
-JAVA_OPTS="-Xms<%= node['crowd']['jvm']['minimum_memory'] %> -Xmx<%= node['crowd']['jvm']['maximum_memory'] %> -XX:MaxPermSize=<%= node['crowd']['jvm']['maximum_permgen'] %> -Dfile.encoding=UTF-8 $JAVA_OPTS"
+CATALINA_PID="/var/run/crowd.pid"
 
+JAVA_OPTS="-Xms<%= node['crowd']['jvm']['minimum_memory'] %> -Xmx<%= node['crowd']['jvm']['maximum_memory'] %> -XX:MaxPermSize=<%= node['crowd']['jvm']['maximum_permgen'] %> -Dfile.encoding=UTF-8 $JAVA_OPTS"
 JAVA_OPTS="<%= node['crowd']['jvm']['java_opts'] %> $JAVA_OPTS"
 
-
 export JAVA_OPTS
+export CATALINA_PID
