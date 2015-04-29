@@ -25,6 +25,14 @@ template "#{node['crowd']['install_path']}/apache-tomcat/bin/setenv.sh" do
   notifies :restart, 'service[crowd]', :delayed
 end
 
+template "/var/run/crowd.pid" do
+  source 'crowd.pid.erb'
+  mode '0644'
+  owner node['crowd']['user']
+  group node['crowd']['user']
+  only_if { node['crowd']['install_type'] == 'standalone' }
+end
+
 # template "#{node['crowd']['home_path']}/crowd.properties" do
 #   source 'crowd.properties.erb'
 #   mode '0644'
