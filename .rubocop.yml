@@ -20,11 +20,12 @@ MethodLength:
 #
 SingleSpaceBeforeFirstArg:
   Enabled: false
-#
-# couldn't figure it out so set this
-#
+
+# TODO: move to compact style later?
+# ClassAndModuleChildren:
+#   EnforcedStyle: compact
 ClassAndModuleChildren:
-  EnforcedStyle: compact
+  Enabled: false
 
 ShadowingOuterLocalVariable:
   Enabled: false

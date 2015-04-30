@@ -1,5 +1,3 @@
-settings = Crowd.settings(node)
-
 directory node['crowd']['home_path'] do
   owner node['crowd']['user']
   action :create
@@ -25,7 +23,7 @@ template "#{node['crowd']['install_path']}/apache-tomcat/bin/setenv.sh" do
   notifies :restart, 'service[crowd]', :delayed
 end
 
-template "/var/run/crowd.pid" do
+template '/var/run/crowd.pid' do
   source 'crowd.pid.erb'
   mode '0644'
   owner node['crowd']['user']
@@ -43,7 +41,7 @@ end
 # end
 
 # crowd-webapp/WEB-INF/classes/crowd-init.properties
-# TODO for future?
+# TODO: for the future?
 # template "#{node['crowd']['home_path']}/crowd.cfg.xml" do
 #   source 'crowd.cfg.xml.erb'
 #   mode '0644'
