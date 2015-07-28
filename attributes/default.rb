@@ -7,6 +7,13 @@ default['crowd']['version']            = '2.7.2'
 default['crowd']['backup_when_update'] = false
 default['crowd']['ssl']                = false
 
+default['crowd']['proxy']                   = 'nginx'
+default['crowd']['proxy']['url']            = node['fqdn']
+default['crowd']['proxy']['ssl_key']        = ''
+default['crowd']['proxy']['ssl_key_path']   = ''
+default['crowd']['proxy']['ssl_cert_path']  = ''
+default['crowd']['proxy']['redirect']       = false
+
 default['crowd']['applicationname']    = 'crowd'
 default['crowd']['applicationpwd']     = ''
 default['crowd']['serverid']           = ''
@@ -56,13 +63,13 @@ else
   default['crowd']['apache2']['ssl']['key_file']         = '/etc/ssl/private/ssl-cert-snakeoil.key'
 end
 
-default['crowd']['container_server']['name'] = 'tomcat'
-default['crowd']['container_server']['version'] = '6'
-
-default['crowd']['build']['targets'] = 'war'
-default['crowd']['build']['enable'] = true
-default['crowd']['build']['exclude_jars'] = %w(jcl-over-slf4j jul-to-slf4j log4j slf4j-api slf4j-log4j12)
-default['crowd']['build']['file'] = "#{node['crowd']['install_path']}/dist-#{node['crowd']['container_server']['name']}/atlassian-crowd-#{node['crowd']['version']}.war"
+# default['crowd']['container_server']['name'] = 'tomcat'
+# default['crowd']['container_server']['version'] = '6'
+#
+# default['crowd']['build']['targets'] = 'war'
+# default['crowd']['build']['enable'] = true
+# default['crowd']['build']['exclude_jars'] = %w(jcl-over-slf4j jul-to-slf4j log4j slf4j-api slf4j-log4j12)
+# default['crowd']['build']['file'] = "#{node['crowd']['install_path']}/dist-#{node['crowd']['container_server']['name']}/atlassian-crowd-#{node['crowd']['version']}.war"
 
 default['crowd']['database']['type']     = 'postgresql'
 default['crowd']['database']['host']     = 'localhost'
@@ -71,43 +78,43 @@ default['crowd']['database']['password'] = 'changeit'
 default['crowd']['database']['port']     = 5432
 default['crowd']['database']['user']     = 'crowd'
 
-default['crowd']['jars']['deploy_jars'] = %w(carol carol-properties hsqldb jcl-over-slf4j jonas_timer jotm jotm-iiops_stubs jotm-jmrp_stubs jta jul-to-slf4j log4j objectweb-datasource ots-jts slf4j-api slf4j-log4j12 xapool)
-default['crowd']['jars']['install_path'] = node['crowd']['install_path'] + '-jars'
-default['crowd']['jars']['url_base'] = 'http://www.atlassian.com/software/crowd/downloads/binary/crowd-jars'
-default['crowd']['jars']['version'] = node['crowd']['version'].split('.')[0..1].join('.')
-default['crowd']['jars']['url'] = "#{node['crowd']['jars']['url_base']}-#{node['crowd']['container_server']['name']}-distribution-#{node['crowd']['jars']['version']}-#{node['crowd']['container_server']['name']}-#{node['crowd']['container_server']['version']}x.zip"
+# default['crowd']['jars']['deploy_jars'] = %w(carol carol-properties hsqldb jcl-over-slf4j jonas_timer jotm jotm-iiops_stubs jotm-jmrp_stubs jta jul-to-slf4j log4j objectweb-datasource ots-jts slf4j-api slf4j-log4j12 xapool)
+# default['crowd']['jars']['install_path'] = node['crowd']['install_path'] + '-jars'
+# default['crowd']['jars']['url_base'] = 'http://www.atlassian.com/software/crowd/downloads/binary/crowd-jars'
+# default['crowd']['jars']['version'] = node['crowd']['version'].split('.')[0..1].join('.')
+# default['crowd']['jars']['url'] = "#{node['crowd']['jars']['url_base']}-#{node['crowd']['container_server']['name']}-distribution-#{node['crowd']['jars']['version']}-#{node['crowd']['container_server']['name']}-#{node['crowd']['container_server']['version']}x.zip"
 
-default['crowd']['jvm']['minimum_memory']  = '256m'
-default['crowd']['jvm']['maximum_memory']  = '768m'
+default['crowd']['jvm']['minimum_memory']  = '512m'
+default['crowd']['jvm']['maximum_memory']  = '1024m'
 default['crowd']['jvm']['maximum_permgen'] = '256m'
 default['crowd']['jvm']['java_opts']       = ''
 default['crowd']['jvm']['support_args']    = ''
 
-default['crowd']['tomcat']['keyAlias']     = 'tomcat'
-default['crowd']['tomcat']['keystoreFile'] = "#{node['crowd']['home_path']}/.keystore"
-default['crowd']['tomcat']['keystorePass'] = 'changeit'
-default['crowd']['tomcat']['port']     = '8095'
-default['crowd']['tomcat']['ssl_port'] = '8443'
-
-default['crowd']['war']['file'] = node['crowd']['build']['file']
-
-case node['crowd']['container_server']['name']
-when 'tomcat'
-  if node['crowd']['install_type'] == 'war'
-    default['crowd']['context'] = 'crowd'
-    begin
-      default['crowd']['context_path'] = node['tomcat']['context_dir']
-      default['crowd']['lib_path'] = node['tomcat']['lib_dir']
-      default['crowd']['user'] = node['tomcat']['user']
-    rescue
-      default['crowd']['context_path'] = "/usr/share/tomcat#{node['crowd']['container_server']['version']}/conf/Catalina/localhost"
-      default['crowd']['lib_path'] = "/usr/share/tomcat#{node['crowd']['container_server']['version']}/lib"
-      default['crowd']['user'] = 'tomcat'
-    end
-  else
-    default['crowd']['context'] = ''
-    default['crowd']['context_path'] = "#{node['crowd']['install_path']}/conf/Catalina/localhost"
-    default['crowd']['lib_path'] = "#{node['crowd']['install_path']}/lib"
-    default['crowd']['user'] = 'crowd'
-  end
-end
+# default['crowd']['tomcat']['keyAlias']     = 'tomcat'
+# default['crowd']['tomcat']['keystoreFile'] = "#{node['crowd']['home_path']}/.keystore"
+# default['crowd']['tomcat']['keystorePass'] = 'changeit'
+# default['crowd']['tomcat']['port']         = '8095'
+# default['crowd']['tomcat']['ssl_port']     = '8443'
+#
+# default['crowd']['war']['file'] = node['crowd']['build']['file']
+#
+# case node['crowd']['container_server']['name']
+# when 'tomcat'
+#   if node['crowd']['install_type'] == 'war'
+#     default['crowd']['context'] = 'crowd'
+#     begin
+#       default['crowd']['context_path'] = node['tomcat']['context_dir']
+#       default['crowd']['lib_path'] = node['tomcat']['lib_dir']
+#       default['crowd']['user'] = node['tomcat']['user']
+#     rescue
+#       default['crowd']['context_path'] = "/usr/share/tomcat#{node['crowd']['container_server']['version']}/conf/Catalina/localhost"
+#       default['crowd']['lib_path'] = "/usr/share/tomcat#{node['crowd']['container_server']['version']}/lib"
+#       default['crowd']['user'] = 'tomcat'
+#     end
+#   else
+#     default['crowd']['context'] = ''
+#     default['crowd']['context_path'] = "#{node['crowd']['install_path']}/conf/Catalina/localhost"
+#     default['crowd']['lib_path'] = "#{node['crowd']['install_path']}/lib"
+#     default['crowd']['user'] = 'crowd'
+#   end
+# end
