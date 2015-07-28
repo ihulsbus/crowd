@@ -6,6 +6,12 @@ default['crowd']['url_base']           = 'http://www.atlassian.com/software/crow
 default['crowd']['version']            = '2.7.2'
 default['crowd']['backup_when_update'] = false
 default['crowd']['ssl']                = false
+default['crowd']['user']               = 'crowd'
+
+default['apt']['compile_time_update']               = true
+default['build-essential']['compile_time']          = true
+
+default['postgresql']['config_pgtune']['db_type']   = 'web'
 
 default['crowd']['proxy']['enabled']        = true
 default['crowd']['proxy']['type']           = 'nginx'
