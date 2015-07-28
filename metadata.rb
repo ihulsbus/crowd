@@ -21,6 +21,7 @@ depends 'java'
 depends 'build-essential'
 depends 'nginx-proxy'
 depends 'postgresql'
+depends 'nokogiri'
 
 suggests 'tomcat'
 
