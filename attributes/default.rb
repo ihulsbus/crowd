@@ -7,8 +7,9 @@ default['crowd']['version']            = '2.7.2'
 default['crowd']['backup_when_update'] = false
 default['crowd']['ssl']                = false
 
-default['crowd']['proxy']                   = 'nginx'
-default['crowd']['proxy']['url']            = node['hostname']
+default['crowd']['proxy']['enabled']        = true
+default['crowd']['proxy']['type']           = 'nginx'
+default['crowd']['proxy']['url']            = node['fqdn']
 default['crowd']['proxy']['ssl_key']        = ''
 default['crowd']['proxy']['ssl_key_path']   = ''
 default['crowd']['proxy']['ssl_cert_path']  = ''

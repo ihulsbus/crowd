@@ -20,6 +20,6 @@ include_recipe "crowd::#{node['crowd']['init_type']}"
 include_recipe 'crowd::configuration'
 
 # Install the proxy in front of Crowd, if any.
-unless node['crowd']['proxy'] == false
-  include_recipe "crowd::#{node['crowd']['proxy']}"
+unless node['crowd']['proxy']['enabled'] == false
+  include_recipe "crowd::#{node['crowd']['proxy']['type']}"
 end
