@@ -17,13 +17,9 @@ depends 'apache2'
 depends 'ark'
 depends 'database'
 depends 'java'
-# depends 'mysql'
-# depends 'mysql_connector'
 depends 'build-essential'
 depends 'postgresql', '~> 3.4.18'
 
 suggests 'tomcat'
 
-# supports 'centos', '>= 6.0'
-# supports 'redhat', '>= 6.0'
 supports 'ubuntu', '>= 14.04'

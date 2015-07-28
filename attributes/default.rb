@@ -33,14 +33,6 @@ when 'debian'
         when '2.7.2' then '49361f2c7cbd8035c2fc64dfff098eb5e51d754b5645425770da14fc577f1048'
       end
   end
-  # when 'war'
-  #   default['crowd']['url']      = "#{node['crowd']['url_base']}-#{node['crowd']['version']}-war.zip"
-  #   default['crowd']['checksum'] =
-  #     case node['crowd']['version']
-  #     when '2.8.0' then '88e432311618b05963909f96a52a0dc5250a8d014c35acef0e62cfd8f51aae19'
-  #     when '2.7.2' then '419748d18bd3f8d582614b7903d549bbd90c8d8ec7c5037b37ba5749b1bd5143'
-  #     end
-  # end
 end
 # rubocop:enable BlockNesting
 
