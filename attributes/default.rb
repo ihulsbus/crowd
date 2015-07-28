@@ -98,12 +98,12 @@ default['crowd']['jvm']['maximum_permgen'] = '256m'
 default['crowd']['jvm']['java_opts']       = ''
 default['crowd']['jvm']['support_args']    = ''
 
-# default['crowd']['tomcat']['keyAlias']     = 'tomcat'
-# default['crowd']['tomcat']['keystoreFile'] = "#{node['crowd']['home_path']}/.keystore"
-# default['crowd']['tomcat']['keystorePass'] = 'changeit'
-# default['crowd']['tomcat']['port']         = '8095'
-# default['crowd']['tomcat']['ssl_port']     = '8443'
-#
+default['crowd']['tomcat']['keyAlias']     = 'tomcat'
+default['crowd']['tomcat']['keystoreFile'] = "#{node['crowd']['home_path']}/.keystore"
+default['crowd']['tomcat']['keystorePass'] = 'changeit'
+default['crowd']['tomcat']['port']         = '8095'
+default['crowd']['tomcat']['ssl_port']     = '8443'
+
 # default['crowd']['war']['file'] = node['crowd']['build']['file']
 #
 # case node['crowd']['container_server']['name']
