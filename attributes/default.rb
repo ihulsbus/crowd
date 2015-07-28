@@ -7,6 +7,7 @@ default['crowd']['version']            = '2.7.2'
 default['crowd']['backup_when_update'] = false
 default['crowd']['ssl']                = false
 default['crowd']['user']               = 'crowd'
+default['crowd']['group']              = 'crowd'
 
 default['apt']['compile_time_update']               = true
 default['build-essential']['compile_time']          = true
