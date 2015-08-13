@@ -25,10 +25,13 @@ end
 
 nginx_proxy node['crowd']['proxy']['url'] do
   url 'http://localhost:8095'
-  ssl_key node['crowd']['proxy']['ssl_key']
-  ssl_key_path node['crowd']['proxy']['ssl_key_path']
-  ssl_certificate_path node['crowd']['proxy']['ssl_cert_path']
-  redirect
+  if node['crowd']['ssl']
+    ssl_key node['crowd']['proxy']['ssl_key']
+    ssl_key_path node['crowd']['proxy']['ssl_key_path']
+    ssl_certificate_path node['crowd']['proxy']['ssl_cert_path']
+  end
+
+  redirect node['crowd']['proxy']['redirect']
 end
 
 nginx_site 'default' do
