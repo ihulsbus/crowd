@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/afklm/chef_crowd.svg?branch=master)](https://travis-ci.org/afklm/chef_crowd)
+
 crowd Cookbook
 ==============
 
