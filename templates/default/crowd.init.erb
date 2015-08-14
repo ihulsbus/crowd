@@ -59,9 +59,9 @@ case "$1" in
     status)
         <% case node['platform_family'] -%>
         <% when 'rhel' -%>
-        status -p $BASE/apache-tomcat/work/catalina.pid $APP
+        status -p /var/run/crowd.pid $APP
         <% else -%>
-        status_of_proc -p $BASE/apache-tomcat/work/catalina.pid $JAVA_HOME/bin/java $APP
+        status_of_proc -p /var/run/crowd.pid $JAVA_HOME/bin/java $APP
         <% end -%>
         RETVAL=$?
         ;;
