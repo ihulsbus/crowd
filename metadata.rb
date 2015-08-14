@@ -4,7 +4,7 @@ maintainer_email 'martijn.vanderkleijn@klm.com'
 license          'MIT'
 description      'Installs/Configures Atlassian Crowd'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '0.5.2'
+version          '0.5.3'
 
 recipe 'crowd', 'Installs/configures Atlassian CROWD'
 recipe 'crowd::apache2', 'Installs/configures Apache 2 as proxy (ports 80/443)'

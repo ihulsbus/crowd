@@ -28,7 +28,7 @@
 APP=CROWD
 # Name of the user to run as
 USER=<%= node['crowd']['user'] %>
-BASE=<%= node['crowd']['install_path'] %>
+BASE=<%= node['crowd']['install_path'] %>/crowd
 
 function start {
     echo "Starting $APP"

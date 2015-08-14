@@ -8,7 +8,7 @@ include_recipe 'nokogiri::chefgem'
 ruby_block 'Editconfig' do
   block do
     require 'nokogiri'
-    f = File.read("#{node['crowd']['install_path']}/apache-tomcat/conf/server.xml")
+    f = File.read("#{node['crowd']['install_path']}/crowd/apache-tomcat/conf/server.xml")
     doc = Nokogiri::XML(f)
     doc.xpath('/Server/Service/Engine[@name="Catalina"]').each do |change|
       valve = Nokogiri::XML::Node.new 'Valve', doc
@@ -18,9 +18,9 @@ ruby_block 'Editconfig' do
       valve['internalProxies'] = '127.0.0.1'
       change.add_child(valve)
     end
-    File.open("#{node['crowd']['install_path']}/apache-tomcat/conf/server.xml", 'w') { |f| f.print(doc.to_xml) }
+    File.open("#{node['crowd']['install_path']}/crowd/apache-tomcat/conf/server.xml", 'w') { |f| f.print(doc.to_xml) }
   end
-  not_if("cat #{node['crowd']['install_path']}/apache-tomcat/conf/server.xml | grep RemoteIpValve")
+  not_if("cat #{node['crowd']['install_path']}/crowd/apache-tomcat/conf/server.xml | grep RemoteIpValve")
 end
 
 nginx_proxy node['crowd']['proxy']['url'] do

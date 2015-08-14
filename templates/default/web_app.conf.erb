@@ -12,7 +12,7 @@
   ServerAlias <%= virtual_host_alias %>
   <% end -%>
   <% end -%>
-  DocumentRoot <%= node['crowd']['install_path'] %>
+  DocumentRoot <%= node['crowd']['install_path'] %>/crowd
 
   CustomLog <%= node['crowd']['apache2']['access_log'].empty? ? node['apache']['log_dir']+"/crowd-access.log" : node['crowd']['apache2']['access_log'] %> combined
   ErrorLog <%= node['crowd']['apache2']['error_log'].empty? ? node['apache']['log_dir']+"/crowd-error.log" : node['crowd']['apache2']['error_log'] %>
@@ -40,7 +40,7 @@
   ServerAlias <%= virtual_host_alias %>
   <% end -%>
   <% end -%>
-  DocumentRoot <%= node['crowd']['install_path'] %>
+  DocumentRoot <%= node['crowd']['install_path'] %>/crowd
 
   CustomLog <%= node['crowd']['apache2']['ssl']['access_log'].empty? ? node['apache']['log_dir']+"/crowd-ssl-access.log" : node['crowd']['apache2']['ssl']['access_log'] %> combined
   ErrorLog <%= node['crowd']['apache2']['ssl']['error_log'].empty? ? node['apache']['log_dir']+"/crowd-ssl-error.log" : node['crowd']['apache2']['ssl']['error_log'] %>

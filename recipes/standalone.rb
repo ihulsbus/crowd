@@ -1,5 +1,3 @@
-ark_prefix_path = ::File.dirname(node['crowd']['install_path']) if ::File.basename(node['crowd']['install_path']) == 'crowd'
-ark_prefix_path ||= node['crowd']['install_path']
 settings = Crowd.settings(node)
 
 directory File.dirname(node['crowd']['home_path']) do
@@ -34,15 +32,18 @@ execute 'Generating Self-Signed Java Keystore' do
   only_if { settings['tomcat']['keystoreFile'] == "#{node['crowd']['home_path']}/.keystore" }
 end
 
-directory ark_prefix_path do
+directory node['crowd']['install_path'] do
+  owner 'root'
+  group 'root'
+  mode 00755
   action :create
   recursive true
 end
 
 ark 'crowd' do
   url node['crowd']['url']
-  prefix_root ark_prefix_path
-  prefix_home ark_prefix_path
+  prefix_root node['crowd']['install_path']
+  prefix_home node['crowd']['install_path']
   checksum node['crowd']['checksum']
   version node['crowd']['version']
   owner node['crowd']['user']

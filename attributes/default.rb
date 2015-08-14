@@ -1,6 +1,6 @@
 default['crowd']['home_path']          = '/var/atlassian/application-data/crowd'
 default['crowd']['init_type']          = 'sysv'
-default['crowd']['install_path']       = '/opt/atlassian/crowd'
+default['crowd']['install_path']       = '/opt/atlassian'
 default['crowd']['install_type']       = 'standalone'
 default['crowd']['url_base']           = 'http://www.atlassian.com/software/crowd/downloads/binary/atlassian-crowd'
 default['crowd']['version']            = '2.8.3'
