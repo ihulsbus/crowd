@@ -34,7 +34,6 @@ else
   default['crowd']['arch'] = 'x32'
 end
 
-# rubocop:disable BlockNesting
 case node['platform_family']
 when 'debian'
   case node['crowd']['install_type']
@@ -49,7 +48,6 @@ when 'debian'
       end
   end
 end
-# rubocop:enable BlockNesting
 
 default['crowd']['apache2']['access_log']         = ''
 default['crowd']['apache2']['error_log']          = ''
