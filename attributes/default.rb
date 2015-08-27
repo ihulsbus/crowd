@@ -81,7 +81,7 @@ default['crowd']['database']['user']     = 'crowd'
 default['crowd']['jvm']['minimum_memory']  = '512m'
 default['crowd']['jvm']['maximum_memory']  = '1024m'
 default['crowd']['jvm']['maximum_permgen'] = '256m'
-default['crowd']['jvm']['java_opts']       = ''
+default['crowd']['jvm']['java_opts']       = ' -Djava.security.egd=file:///dev/urandom'
 default['crowd']['jvm']['support_args']    = ''
 
 default['crowd']['tomcat']['keyAlias']     = 'tomcat'
