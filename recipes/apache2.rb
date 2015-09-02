@@ -1,3 +1,10 @@
+#
+# Cookbook Name:: crowd
+# Recipe:: apache2
+#
+# Copyright 2015, KLM Royal Dutch Airlines
+#
+
 node.set['apache']['listen_ports'] = node['apache']['listen_ports'] + [node['crowd']['apache2']['port']] unless node['apache']['listen_ports'].include?(node['crowd']['apache2']['port'])
 node.set['apache']['listen_ports'] = node['apache']['listen_ports'] + [node['crowd']['apache2']['ssl']['port']] unless node['apache']['listen_ports'].include?(node['crowd']['apache2']['ssl']['port'])
 

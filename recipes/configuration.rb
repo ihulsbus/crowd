@@ -1,3 +1,10 @@
+#
+# Cookbook Name:: crowd
+# Recipe:: configuration
+#
+# Copyright 2015, KLM Royal Dutch Airlines
+#
+
 directory node['crowd']['home_path'] do
   owner node['crowd']['user']
   action :create

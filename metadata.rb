@@ -4,14 +4,19 @@ maintainer_email 'martijn.vanderkleijn@klm.com'
 license          'MIT'
 description      'Installs/Configures Atlassian Crowd'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '0.5.5'
+version          '0.5.6'
 
-recipe 'crowd', 'Installs/configures Atlassian CROWD'
-recipe 'crowd::apache2', 'Installs/configures Apache 2 as proxy (ports 80/443)'
-recipe 'crowd::nginx', 'Installs/configures Nginx as proxy (ports 80/443)'
-recipe 'crowd::database', 'Installs/configures Postgres server, database, and user for CROWD'
+recipe 'crowd::default',    'Installs/configures Atlassian CROWD'
 recipe 'crowd::standalone', 'Installs/configures CROWD via standalone archive'
-recipe 'crowd::sysv', 'Installs/configures CROWD SysV init service'
+recipe 'crowd::database',   'Installs/configures Postgres server, database, and user for CROWD'
+recipe 'crowd::sysv',       'Installs/configures CROWD SysV init service'
+recipe 'crowd::apache2',    'Installs/configures Apache 2 as proxy (ports 80/443)'
+recipe 'crowd::nginx',      'Installs/configures Nginx as proxy (ports 80/443)'
+
+# Only tested on Ubuntu, YMMV on other platforms
+%w( debian ubuntu ).each do |os|
+  supports os
+end
 
 depends 'apt'
 depends 'apache2'
@@ -22,7 +27,3 @@ depends 'build-essential'
 depends 'nginx-proxy'
 depends 'postgresql'
 depends 'nokogiri'
-
-suggests 'tomcat'
-
-supports 'ubuntu', '>= 14.04'

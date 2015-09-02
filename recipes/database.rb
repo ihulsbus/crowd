@@ -1,3 +1,10 @@
+#
+# Cookbook Name:: crowd
+# Recipe:: database
+#
+# Copyright 2015, KLM Royal Dutch Airlines
+#
+
 settings = Crowd.settings(node)
 
 database_connection = {

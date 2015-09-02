@@ -1,10 +1,17 @@
-# Install compile-time dependencies
+#
+# Cookbook Name:: crowd
+# Recipe:: nginx
+#
+# Copyright 2015, KLM Royal Dutch Airlines
+#
+
+# Install compile-time dependencies for nokogiri
 package 'zlib1g-dev' do
   action :nothing
 end.run_action(:install)
 include_recipe 'nokogiri::chefgem'
 
-# Edit the server.xml so the proxy + Bamboo works properly to allow HTTPS
+# Edit the server.xml so the proxy + Crowd works properly to allow HTTPS
 ruby_block 'Editconfig' do
   block do
     require 'nokogiri'

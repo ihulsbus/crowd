@@ -1,3 +1,10 @@
+#
+# Cookbook Name:: crowd
+# Recipe:: standalone
+#
+# Copyright 2015, KLM Royal Dutch Airlines
+#
+
 settings = Crowd.settings(node)
 
 directory File.dirname(node['crowd']['home_path']) do
@@ -40,6 +47,7 @@ directory node['crowd']['install_path'] do
   recursive true
 end
 
+# TODO: replace by Chef::ProviderResolver.new(node, resource, action)
 ark 'crowd' do
   url node['crowd']['url']
   prefix_root node['crowd']['install_path']

@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: chef_crowd
+# Cookbook Name:: crowd
 # Recipe:: default
 #
 # Copyright 2015, KLM Royal Dutch Airlines

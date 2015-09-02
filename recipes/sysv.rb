@@ -1,3 +1,10 @@
+#
+# Cookbook Name:: crowd
+# Recipe:: sysv
+#
+# Copyright 2015, KLM Royal Dutch Airlines
+#
+
 template '/etc/init.d/crowd' do
   source 'crowd.init.erb'
   mode '0755'
