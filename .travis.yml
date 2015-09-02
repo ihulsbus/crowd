@@ -6,3 +6,6 @@ before_script:
 script:
   # - bundle exec knife cookbook test -a -o .
   - bundle exec rake
+env:
+  global:
+    - secure: "KA9NzDwwOq74/BnULYbUknBP+qvp6kvcT+Gc1su+78QX2qd196Q9GAGAvah+oStrvqdbtuDWoGVXwxWcMvLn0T9ZZNPkJXbL/t6/aCyTAXMJyXdF6FG63Uy0D5GxXftdbl22tSf8N9b2qmMPHYGWeVyRnkarK/6iQzgh2TBEZoc="
