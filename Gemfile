@@ -12,6 +12,6 @@ gem 'rubocop', :group => :test
 gem 'rake', :group => :test
 gem 'chefspec', :group => :test
 gem 'rspec', :group => :test
-gem "codeclimate-test-reporter", group: :test, require: nil
+gem 'codeclimate-test-reporter', group: :test, require: nil
 
 gem 'stove', :group => :foss
