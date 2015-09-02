@@ -1,4 +1,6 @@
 [![Build Status](https://travis-ci.org/afklm/chef_crowd.svg?branch=master)](https://travis-ci.org/afklm/chef_crowd)
+[![Code Climate](https://codeclimate.com/github/afklm/chef_crowd/badges/gpa.svg)](https://codeclimate.com/github/afklm/chef_crowd)
+[![Test Coverage](https://codeclimate.com/github/afklm/chef_crowd/badges/coverage.svg)](https://codeclimate.com/github/afklm/chef_crowd/coverage)
 
 Crowd Cookbook
 ==============
