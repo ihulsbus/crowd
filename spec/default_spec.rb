@@ -12,10 +12,10 @@ describe 'crowd::default' do
       # Needed for testing postgresql cookbook
       node.set['postgresql']['password']['postgres'] = 'pswpsw123'
     end
+    .converge(described_recipe)
   end
 
   it 'should include the apt::default recipe when platform is debian-based' do
-    chef_run.converge(described_recipe)
     expect(chef_run).to include_recipe('apt::default')
   end
 end

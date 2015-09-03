@@ -2,16 +2,25 @@ source 'https://rubygems.org'
 
 gem 'berkshelf', :group => [:production, :integration]
 gem 'chef', :group => [:production, :test, :integration]
-gem 'kitchen-openstack', :group => :production
 
-gem 'test-kitchen', :group => :integration
-gem 'kitchen-vagrant', :group => :integration
+group :production do
+  gem 'kitchen-openstack'
+end
 
-gem 'foodcritic', '>=3.0.5', :group => :test
-gem 'rubocop', :group => :test
-gem 'rake', :group => :test
-gem 'chefspec', :group => :test
-gem 'rspec', :group => :test
-gem 'codeclimate-test-reporter', group: :test, require: nil
+group :integration do
+  gem 'test-kitchen'
+  gem 'kitchen-vagrant'
+end
 
-gem 'stove', :group => :foss
+group :test do
+  gem 'foodcritic', '>=3.0.5'
+  gem 'rubocop'
+  gem 'rake'
+  gem 'chefspec'
+  gem 'rspec'
+  gem 'codeclimate-test-reporter', require: nil
+end
+
+group :foss do
+  gem 'stove'
+end
