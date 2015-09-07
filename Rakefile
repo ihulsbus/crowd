@@ -16,9 +16,13 @@ FoodCritic::Rake::LintTask.new(:foodcritic) do |t|
   }
 end
 
-desc 'Run ChefSpec examples'
-RSpec::Core::RakeTask.new(:spec)
+desc 'Run ChefSpec unit tests'
+RSpec::Core::RakeTask.new(:spec) do |t|
+  t.pattern    = 'test/unit/**/*_spec.rb'
+  t.rspec_opts = ' --require ./test/unit/default/chefspec/spec_helper.rb'
+end
 
 desc 'Run all tests'
-task :test => [:rubocop, :foodcritic, :spec]
+task :lint => [:rubocop, :foodcritic]
+task :test => [:lint, :spec]
 task :default => :test

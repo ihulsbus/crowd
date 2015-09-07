@@ -1,4 +1,4 @@
-require 'spec_helper.rb'
+# spec_helper is automatically included via Rakefile
 
 describe 'crowd::sysv' do
   let :chef_run do
@@ -10,6 +10,6 @@ describe 'crowd::sysv' do
   end
 
   it 'enables the crowd service with attributes' do
-    expect(chef_run).to enable_service('crowd').with(supports: {:status => :true, :restart => :true})
+    expect(chef_run).to enable_service('crowd').with(supports: { :status => :true, :restart => :true })
   end
 end

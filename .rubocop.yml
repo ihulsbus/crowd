@@ -1,8 +1,6 @@
 AllCops:
   Exclude:
-    - test/**
     - vendor/**/*
-    - spec/**
 Documentation:
   Enabled: false
 AlignParameters:
@@ -22,8 +20,6 @@ SingleSpaceBeforeFirstArg:
   Enabled: false
 
 # TODO: move to compact style later?
-# ClassAndModuleChildren:
-#   EnforcedStyle: compact
 ClassAndModuleChildren:
   Enabled: false
 
