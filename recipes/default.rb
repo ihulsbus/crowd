@@ -14,12 +14,12 @@ settings = Crowd.settings(node)
 
 include_recipe 'build-essential'
 include_recipe 'java'
-include_recipe 'crowd::database' if settings['database']['host'] == 'localhost'
-include_recipe "crowd::#{node['crowd']['install_type']}"
-include_recipe "crowd::#{node['crowd']['init_type']}"
-include_recipe 'crowd::configuration'
+include_recipe 'chef_crowd::database' if settings['database']['host'] == 'localhost'
+include_recipe "chef_crowd::#{node['crowd']['install_type']}"
+include_recipe "chef_crowd::#{node['crowd']['init_type']}"
+include_recipe 'chef_crowd::configuration'
 
 # Install the proxy in front of Crowd, if any.
 unless node['crowd']['proxy']['enabled'] == false
-  include_recipe "crowd::#{node['crowd']['proxy']['type']}"
+  include_recipe "chef_crowd::#{node['crowd']['proxy']['type']}"
 end

@@ -37,7 +37,7 @@ Contributing
 1. Fork the repository on Github
 2. Create a named feature or bug branch (like `add_component_x`)
 3. Write your change
-4. Write ChefSpec tests for your change (if applicable)
+4. Write ChefSpec / ServerSpec tests for your change (if applicable)
 5. Run the tests, ensuring they all pass
 6. Submit a Pull Request using Github
 
