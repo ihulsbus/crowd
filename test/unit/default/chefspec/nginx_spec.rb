@@ -1,6 +1,6 @@
 # spec_helper is automatically included via Rakefile
 
-describe 'crowd::nginx' do
+describe 'chef_crowd::nginx' do
   before(:each) do
     # stub_command("ls /var/lib/postgresql/9.3/main/recovery.conf").and_return(false)
     stub_command('cat /opt/atlassian/crowd/apache-tomcat/conf/server.xml | grep RemoteIpValve').and_return(false)
