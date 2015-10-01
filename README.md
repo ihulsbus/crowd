@@ -5,6 +5,10 @@ Crowd Cookbook
 
 This cookbook installs Atlassian's Crowd. It defaults to using PostgreSQL.
 
+It sets up a full working system after which you can run Atlassian's configuration
+wizard. If you want more influence, you can write a wrapper cookbook for your
+specific setup.
+
 Supports
 --------
 
