@@ -1,11 +1,16 @@
+language: ruby
+cache: bundler
+bundler_args: --without integration
 rvm:
-  - 2.1.2
+  - 2.2.3
 #bundler_args: --without development
 before_script:
   - bundle exec berks install
 script:
   # - bundle exec knife cookbook test -a -o .
-  - bundle exec rake
+  - bundle exec rake travis
+notifications:
+  email: false
 env:
   global:
     - secure: "KA9NzDwwOq74/BnULYbUknBP+qvp6kvcT+Gc1su+78QX2qd196Q9GAGAvah+oStrvqdbtuDWoGVXwxWcMvLn0T9ZZNPkJXbL/t6/aCyTAXMJyXdF6FG63Uy0D5GxXftdbl22tSf8N9b2qmMPHYGWeVyRnkarK/6iQzgh2TBEZoc="
