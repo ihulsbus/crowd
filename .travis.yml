@@ -8,7 +8,7 @@ before_script:
   - bundle exec berks install
 script:
   # - bundle exec knife cookbook test -a -o .
-  - bundle exec rake travis
+  - bundle exec rake
 notifications:
   email: false
 env:
