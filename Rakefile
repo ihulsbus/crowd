@@ -23,6 +23,6 @@ RSpec::Core::RakeTask.new(:spec) do |t|
 end
 
 desc 'Run all tests'
-task :lint => [:rubocop, :foodcritic]
-task :test => [:lint, :spec]
+task :style => [:rubocop, :foodcritic]
+task :test => [:style, :spec]
 task :default => :test

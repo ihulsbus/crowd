@@ -1,7 +1,7 @@
 Crowd Cookbook
 ==============
-[![Chef cookbook](https://img.shields.io/cookbook/v/chef_crowd.svg)](https://supermarket.chef.io/cookbooks/chef_crowd)
-[![Build Status](https://travis-ci.org/afklm/chef_crowd.svg?branch=master)](https://travis-ci.org/afklm/chef_crowd)
+[![Chef cookbook](https://img.shields.io/cookbook/v/crowd.svg)](https://supermarket.chef.io/cookbooks/crowd)
+[![Build Status](https://travis-ci.org/afklm/crowd.svg?branch=master)](https://travis-ci.org/afklm/crowd)
 
 This cookbook installs Atlassian's Crowd. It defaults to using PostgreSQL.
 
@@ -20,7 +20,7 @@ successfully, please let me know in GitHub issues.
 
 Usage
 -----
-#### chef_crowd::default
+#### crowd::default
 
 Just include `crowd` in your node's `run_list`:
 

@@ -18,7 +18,7 @@ platforms:
     key_name: <%= ENV['KEY_NAME'] %>
     private_key_path: <%= ENV['PRIVATE_KEY_PATH'] %>
     username: ubuntu
-    server_name: chef_crowd-dev
+    server_name: crowd-int
     disable_ssl_validation: true
     no_ssh_tcp_check: true
     no_ssh_tcp_check_sleep: 20
@@ -26,4 +26,4 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[chef_crowd]
+      - recipe[crowd]

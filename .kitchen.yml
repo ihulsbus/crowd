@@ -19,6 +19,6 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[chef_crowd]
+      - recipe[crowd]
       apt:
         compiletime: true

@@ -1,20 +1,17 @@
-crowd CHANGELOG
-===============
+## x.y.z (pending)
 
-This file is used to list changes made in each version of the crowd cookbook.
+* Rename chef_crowd -> crowd to reflect supermarket namespace change
 
-0.1.2
------
+## 0.1.2
 
-- [Martijn] - Fix permissions issue for property files
-- [Martijn] - Add dependency on build-essential
+* Fix permissions issue for property files
+* Add dependency on build-essential
 
-0.1.1
------
+## 0.1.1
 
-- [Martijn] - Remove generation of crowd.cfg.xml
-- [Martijn] - Use correct attribute for Crowd URL generation
+* Remove generation of crowd.cfg.xml
+* Use correct attribute for Crowd URL generation
 
-0.1.0
------
-- [Martijn] - Initial release of chef_crowd
+## 0.1.0
+
+* Initial release of chef_crowd
