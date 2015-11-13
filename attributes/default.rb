@@ -9,7 +9,6 @@ default['crowd']['home_path']          = '/var/atlassian/application-data/crowd'
 default['crowd']['init_type']          = 'sysv'
 default['crowd']['install_path']       = '/opt/atlassian'
 default['crowd']['install_type']       = 'standalone'
-default['crowd']['url_base']           = 'http://www.atlassian.com/software/crowd/downloads/binary/atlassian-crowd'
 default['crowd']['version']            = '2.8.3'
 default['crowd']['ssl']                = false
 default['crowd']['user']               = 'crowd'
@@ -30,31 +29,6 @@ default['crowd']['database']['name']     = 'crowd'
 default['crowd']['database']['password'] = 'changeit'
 default['crowd']['database']['port']     = 5432
 default['crowd']['database']['user']     = 'crowd'
-
-# Versions
-if node['kernel']['machine'] == 'x86_64'
-  default['crowd']['arch'] = 'x64'
-else
-  default['crowd']['arch'] = 'x32'
-end
-
-case node['platform_family']
-when 'debian'
-  case node['crowd']['install_type']
-  when 'standalone'
-    default['crowd']['url']      = "#{node['crowd']['url_base']}-#{node['crowd']['version']}.tar.gz"
-    default['crowd']['checksum'] =
-      case node['crowd']['version']
-      when '2.8.3'  then 'dabfde01366c1f72d50440e69d38a3a2a5092a4cba525b3987af8d53b11a402c'
-      when '2.8.2'  then '250a46181cebe96624a59672b9f413d23e17195ca1fd6aafaff860951b5b89b4'
-      when '2.8.0'  then 'c857eb16f65ed99ab8b289fe671e3cea89140d42f85639304caa91a3ba9ade05'
-      when '2.7.2'  then '49361f2c7cbd8035c2fc64dfff098eb5e51d754b5645425770da14fc577f1048'
-      when '2.6.7'  then 'a40d2e3b5f14f44f1ced8046e42e1ea86475eab0cd4914486b4ad1bff79baf58'
-      when '2.5.7'  then '95bdba3729b7b7e489a8b198315518bcce1c9cc1cbb95ebd68b29bd31cf0efa5'
-      when '2.4.10' then 'fcb7dde464068c82558bb6baf6d86542a3aec3a18d8fe965a230a42290cd7e11'
-      end
-  end
-end
 
 # Proxy - Generic
 default['crowd']['proxy']['enabled']        = true
