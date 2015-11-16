@@ -62,11 +62,7 @@ else
 end
 
 # Other / To cleanup
-default['crowd']['tomcat']['keyAlias']     = 'tomcat'
-default['crowd']['tomcat']['keystoreFile'] = "#{node['crowd']['home_path']}/.keystore"
-default['crowd']['tomcat']['keystorePass'] = 'changeit'
 default['crowd']['tomcat']['port']         = '8095'
-default['crowd']['tomcat']['ssl_port']     = '8443'
 
 default['crowd']['applicationname']    = 'crowd'
 default['crowd']['applicationpwd']     = ''
