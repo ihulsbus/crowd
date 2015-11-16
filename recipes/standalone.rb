@@ -49,10 +49,10 @@ end
 
 # TODO: replace by Chef::ProviderResolver.new(node, resource, action)
 ark 'crowd' do
-  url node['crowd']['url']
+  url crowd_artifact_url
   prefix_root node['crowd']['install_path']
   prefix_home node['crowd']['install_path']
-  checksum node['crowd']['checksum']
+  checksum crowd_artifact_checksum
   version node['crowd']['version']
   owner node['crowd']['user']
   group node['crowd']['user']
