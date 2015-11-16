@@ -62,9 +62,9 @@ else
 end
 
 # Other / To cleanup
-default['crowd']['tomcat']['port']         = '8095'
+default['crowd']['tomcat']['port'] = '8095'
 
-default['crowd']['applicationname']    = 'crowd'
-default['crowd']['applicationpwd']     = ''
-default['crowd']['serverid']           = ''
-default['crowd']['license']            = ''
+default['crowd']['applicationname'] = 'crowd'
+default['crowd']['applicationpwd']  = ''
+default['crowd']['serverid']        = ''
+default['crowd']['license']         = ''
