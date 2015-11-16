@@ -1,5 +1,10 @@
 ## x.y.z (pending)
 
+* Move Crowd versions and checksums from attributes to library
+* Add a few more tests and docs
+
+## 1.0.0
+
 * Rename chef_crowd -> crowd to reflect supermarket namespace change
 
 ## 0.1.2
