@@ -1,5 +1,8 @@
 ## x.y.z (pending)
 
+## 1.1.1
+
+* Add auto-tuning for Postgresql
 * Remove some unused attributes
 * Move Crowd versions and checksums from attributes to library
 * Add a few more tests and docs
