@@ -11,8 +11,24 @@ package 'zlib1g-dev' do
 end.run_action(:install)
 include_recipe 'nokogiri::chefgem'
 
+# Edit the server.xml compres responses
+ruby_block 'compression' do
+  block do
+    require 'nokogiri'
+    f = File.read("#{node['crowd']['install_path']}/crowd/apache-tomcat/conf/server.xml")
+    doc = Nokogiri::XML(f)
+    doc.xpath('/Server/Service/Connector[@port="8095"]').each do |change|
+      next unless change.name == 'Connector'
+      change['compression'] = 'on'
+      change['compressableMimeType'] = 'text/html,text/xml,text/plain,text/css,application/json,application/javascript,application/x-javascript'
+    end
+    File.open("#{node['crowd']['install_path']}/crowd/apache-tomcat/conf/server.xml", 'w') { |f| f.print(doc.to_xml) }
+  end
+  not_if("cat #{node['crowd']['install_path']}/crowd/apache-tomcat/conf/server.xml | grep compression")
+end
+
 # Edit the server.xml so the proxy + Crowd works properly to allow HTTPS
-ruby_block 'Editconfig' do
+ruby_block 'remoteIpValve' do
   block do
     require 'nokogiri'
     f = File.read("#{node['crowd']['install_path']}/crowd/apache-tomcat/conf/server.xml")
