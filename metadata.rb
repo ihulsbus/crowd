@@ -1,4 +1,6 @@
 name             'crowd'
+source_url       'https://github.com/afklm/crowd'
+issues_url       'https://github.com/afklm/crowd/issues'
 maintainer       'KLM Royal Dutch Airlines'
 maintainer_email 'martijn.vanderkleijn@klm.com'
 license          'MIT'
