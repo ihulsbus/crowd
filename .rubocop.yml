@@ -16,7 +16,7 @@ MethodLength:
 #
 # we like our neatly-aligned code too much
 #
-SingleSpaceBeforeFirstArg:
+SpaceBeforeFirstArg:
   Enabled: false
 
 # TODO: move to compact style later?
