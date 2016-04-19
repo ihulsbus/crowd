@@ -69,6 +69,9 @@ module Crowd
     # Returns SHA256 checksum map for Crowd artifacts
     def crowd_checksum_map
       {
+        '2.8.4' => {
+          'tar' => '7ae5a8c1928e997f8a220475db13f1fd374ee2b87e4a8d6cd5bb431378bfcf91'
+        },
         '2.8.3' => {
           'tar' => 'dabfde01366c1f72d50440e69d38a3a2a5092a4cba525b3987af8d53b11a402c'
         },

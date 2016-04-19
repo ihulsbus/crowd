@@ -4,7 +4,7 @@ maintainer_email 'martijn.vanderkleijn@klm.com'
 license          'MIT'
 description      'Installs/Configures Atlassian Crowd'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '1.1.2'
+version          '1.1.3'
 
 recipe 'crowd::default',    'Installs/configures Atlassian CROWD'
 recipe 'crowd::standalone', 'Installs/configures CROWD via standalone archive'
