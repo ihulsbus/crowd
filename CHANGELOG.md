@@ -1,5 +1,11 @@
 ## x.y.z (pending)
 
+## 1.1.3
+
+* Add Crowd 2.8.4 support
+* Loosen Postgresql cookbook requirement
+* Fix rubocop issues
+
 ## 1.1.1
 
 * Add auto-tuning for Postgresql
