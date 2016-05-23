@@ -23,8 +23,8 @@ module Crowd
           settings ||= node['crowd'].to_hash
 
           case settings['database']['type']
-          # when 'mysql'
-          #   settings['database']['port'] ||= 3306
+          when 'mysql'
+            settings['database']['port'] ||= 3306
           when 'postgresql'
             settings['database']['port'] ||= 5432
           else
