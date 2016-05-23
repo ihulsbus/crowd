@@ -16,30 +16,30 @@ include_recipe 'build-essential'
 
 case settings['database']['type']
 when 'mysql'
-  directory "#{node[:crowd][:home_dir]}/lib" do
-    owner node[:crowd][:user]
-    group node[:crowd][:group]
+  directory "#{node['crowd']['home_dir']}/lib" do
+    owner node['crowd']['user']
+    group node['crowd']['group']
     mode 0775
     action :create
   end
 
-  mysql_connector_j "#{node[:crowd][:home_dir]}/lib"
+  mysql_connector_j "#{node['crowd']['home_dir']}/lib"
 
   mysql_client 'default' do
     action :create
   end
 
-  mysql_service 'default' do
-    version '5.6'
+  mysql_service 'crowd' do
+    version settings[:database][:version] || '5.6'
     bind_address settings[:database][:host]
     port settings[:database][:port]
-    data_dir node[:mysql][:data_dir] if node[:mysql][:data_dir]
-    initial_root_password node[:mysql][:server_root_password]
+    data_dir node['mysql']['data_dir'] if node['mysql']['data_dir']
+    initial_root_password node['mysql']['server_root_password']
     action [:create, :start]
   end
 
-  database_connection[:username] = node[:bamboo][:database][:root_user_name]
-  database_connection[:password] = node[:mysql][:server_root_password]
+  database_connection[:username] = 'root'
+  database_connection[:password] = node['mysql']['server_root_password']
 
   mysql_database settings[:database][:name] do
     connection database_connection
