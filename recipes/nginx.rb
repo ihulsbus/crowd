@@ -6,7 +6,16 @@
 #
 
 # Install compile-time dependencies for nokogiri
-package 'zlib1g-dev' do
+case node['platform_family']
+when 'debian'
+  zlib_pkg = 'zlib1g-dev'
+when 'rhel'
+  zlib_pkg = 'zlib-devel'
+else
+  Chef::Log.fail("Your platform family (#{node['platform_family']}) does not have a zlib-dev package specified.")
+end
+
+package zlib_pkg do
   action :nothing
 end.run_action(:install)
 include_recipe 'nokogiri::chefgem'
