@@ -14,6 +14,7 @@ Supports
 --------
 
 - Ubuntu 14.04
+- CentOS 6.7
 
 Other platforms or versions may or may not work, but I've simply not tested them
 at this time. If your run this cookbook on another platform or version
