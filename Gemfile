@@ -10,6 +10,8 @@ end
 group :integration do
   gem 'test-kitchen'
   gem 'kitchen-vagrant'
+  gem 'kitchen-digitalocean', '>= 0.9.2'
+  gem 'kitchen-sync', '>= 2.0.0'
 end
 
 group :test do

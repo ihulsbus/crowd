@@ -1,0 +1,6 @@
+transport:
+  name: rsync
+
+driver:
+  name: digitalocean
+  size: 2gb
