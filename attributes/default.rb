@@ -35,7 +35,7 @@ default['crowd']['database']['user']                   = 'crowd'
 # Proxy - Generic
 default['crowd']['proxy']['enabled']        = true
 default['crowd']['proxy']['type']           = 'nginx'
-default['crowd']['proxy']['url']            = node['fqdn']
+default['crowd']['proxy']['url']            = node['fqdn'] || node['hostname']
 default['crowd']['proxy']['ssl_key']        = ''
 default['crowd']['proxy']['ssl_key_path']   = ''
 default['crowd']['proxy']['ssl_cert_path']  = ''
@@ -45,7 +45,7 @@ default['crowd']['proxy']['redirect']       = false
 default['crowd']['apache2']['access_log']         = ''
 default['crowd']['apache2']['error_log']          = ''
 default['crowd']['apache2']['port']               = 80
-default['crowd']['apache2']['virtual_host_alias'] = node['fqdn']
+default['crowd']['apache2']['virtual_host_alias'] = node['fqdn'] || node['hostname']
 default['crowd']['apache2']['virtual_host_name']  = node['hostname']
 
 # SSL
