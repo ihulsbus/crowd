@@ -15,23 +15,23 @@ include_recipe 'nokogiri::chefgem'
 ruby_block 'compression' do
   block do
     require 'nokogiri'
-    f = File.read("#{node['crowd']['install_path']}/crowd/apache-tomcat/conf/server.xml")
+    f = File.read("#{node['crowd']['install_path']}/apache-tomcat/conf/server.xml")
     doc = Nokogiri::XML(f)
     doc.xpath('/Server/Service/Connector[@port="8095"]').each do |change|
       next unless change.name == 'Connector'
       change['compression'] = 'on'
       change['compressableMimeType'] = 'text/html,text/xml,text/plain,text/css,application/json,application/javascript,application/x-javascript'
     end
-    File.open("#{node['crowd']['install_path']}/crowd/apache-tomcat/conf/server.xml", 'w') { |f| f.print(doc.to_xml) }
+    File.open("#{node['crowd']['install_path']}/apache-tomcat/conf/server.xml", 'w') { |f| f.print(doc.to_xml) }
   end
-  not_if("cat #{node['crowd']['install_path']}/crowd/apache-tomcat/conf/server.xml | grep compression")
+  not_if("cat #{node['crowd']['install_path']}/apache-tomcat/conf/server.xml | grep compression")
 end
 
 # Edit the server.xml so the proxy + Crowd works properly to allow HTTPS
 ruby_block 'remoteIpValve' do
   block do
     require 'nokogiri'
-    f = File.read("#{node['crowd']['install_path']}/crowd/apache-tomcat/conf/server.xml")
+    f = File.read("#{node['crowd']['install_path']}/apache-tomcat/conf/server.xml")
     doc = Nokogiri::XML(f)
     doc.xpath('/Server/Service/Engine[@name="Catalina"]').each do |change|
       valve = Nokogiri::XML::Node.new 'Valve', doc
@@ -41,9 +41,9 @@ ruby_block 'remoteIpValve' do
       valve['internalProxies'] = '127.0.0.1'
       change.add_child(valve)
     end
-    File.open("#{node['crowd']['install_path']}/crowd/apache-tomcat/conf/server.xml", 'w') { |f| f.print(doc.to_xml) }
+    File.open("#{node['crowd']['install_path']}/apache-tomcat/conf/server.xml", 'w') { |f| f.print(doc.to_xml) }
   end
-  not_if("cat #{node['crowd']['install_path']}/crowd/apache-tomcat/conf/server.xml | grep RemoteIpValve")
+  not_if("cat #{node['crowd']['install_path']}/apache-tomcat/conf/server.xml | grep RemoteIpValve")
 end
 
 nginx_proxy node['crowd']['proxy']['url'] do
