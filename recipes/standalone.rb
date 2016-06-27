@@ -50,8 +50,8 @@ end
 # TODO: replace by Chef::ProviderResolver.new(node, resource, action)
 ark 'crowd' do
   url crowd_artifact_url
-  prefix_root node['crowd']['install_path']
-  prefix_home node['crowd']['install_path']
+  prefix_root File.dirname(node['crowd']['install_path'])
+  home_dir node['crowd']['install_path']
   checksum crowd_artifact_checksum
   version node['crowd']['version']
   owner node['crowd']['user']
