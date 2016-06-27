@@ -16,7 +16,7 @@ recipe 'crowd::apache2',    'Installs/configures Apache 2 as proxy (ports 80/443
 recipe 'crowd::nginx',      'Installs/configures Nginx as proxy (ports 80/443)'
 
 # Only tested on Ubuntu, YMMV on other platforms
-%w( debian ubuntu ).each do |os|
+%w(debian ubuntu).each do |os|
   supports os
 end
 
