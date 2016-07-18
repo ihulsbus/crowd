@@ -53,7 +53,7 @@ These attributes are under the `node['crowd']['database']` namespace.
 
 Attribute    | Description                                           | Type    | Default
 -------------|-------------------------------------------------------|---------|---------------------------------------
-type         | DB type to use - currently only postgresql            | String  | postgresql
+type         | DB type to use - "postgresql" or "hsqldb"/"none"      | String  | postgresql
 host         | FQDN to DB machine or "localhost" for local installs  | String  | localhost
 port         | DB port                                               | String  | 5432
 name         | DB name                                               | String  | crowd

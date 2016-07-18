@@ -1,5 +1,8 @@
 ## x.y.z (pending)
 
+- Added ability to set database type to `hsqldb` or `none` for a no-op.
+  [[GH-14]](https://github.com/afklm/crowd/issues/14)
+
 ## 1.1.3
 
 * Add Crowd 2.8.4 support
