@@ -34,4 +34,7 @@ when 'postgresql'
     database_name settings['database']['name']
     action [:create, :grant]
   end
+
+when 'hsqldb', 'none'
+  # no-op
 end
