@@ -39,14 +39,6 @@ execute 'Generating Self-Signed Java Keystore' do
   only_if { settings['tomcat']['keystoreFile'] == "#{node['crowd']['home_path']}/.keystore" }
 end
 
-directory node['crowd']['install_path'] do
-  owner 'root'
-  group 'root'
-  mode '0755'
-  action :create
-  recursive true
-end
-
 # TODO: replace by Chef::ProviderResolver.new(node, resource, action)
 ark 'crowd' do
   url crowd_artifact_url
