@@ -10,7 +10,7 @@ settings = Crowd.settings(node)
 directory File.dirname(node['crowd']['home_path']) do
   owner 'root'
   group 'root'
-  mode 00755
+  mode '0755'
   action :create
   recursive true
 end
@@ -42,7 +42,7 @@ end
 directory node['crowd']['install_path'] do
   owner 'root'
   group 'root'
-  mode 00755
+  mode '0755'
   action :create
   recursive true
 end
