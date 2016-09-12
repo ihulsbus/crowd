@@ -1,6 +1,7 @@
 ## x.y.z (pending)
 
-- Added ability to set database type to `hsqldb` or `none` for a no-op.
+* Added support for MySQL - thanks wolf31o2
+* Added ability to set database type to `hsqldb` or `none` for a no-op.
   [[GH-14]](https://github.com/afklm/crowd/issues/14)
 * Slight tweaks to ark usage to standardize with Jira/Confluence
   cookbooks.[[GH-13]](https://github.com/afklm/crowd/issues/13)
