@@ -67,6 +67,7 @@ module Crowd
     end
 
     # Returns SHA256 checksum map for Crowd artifacts
+    # rubocop:disable Metrics/MethodLength
     def crowd_checksum_map
       {
         '2.10.1' => {
@@ -75,7 +76,7 @@ module Crowd
         '2.9.5' => {
           'tar' => '647c7cc956c2ac774e87ab21faceae59267d81533808c9b72d29d7f03a30f020'
         },
-        '2.9.1' => { 
+        '2.9.1' => {
           'tar' => '07c5eb9eaaf51a208cd0e9f0062abff6d239b4a6225cf8154436178fadde3489'
         },
         '2.8.8' => {
@@ -107,6 +108,7 @@ module Crowd
         }
       }
     end
+    # rubocop:enable Metrics/MethodLength
   end
 end
 
