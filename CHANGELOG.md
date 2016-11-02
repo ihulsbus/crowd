@@ -1,5 +1,10 @@
 ## x.y.z (pending)
 
+## 1.2.2
+
+* Forgot the prefix crowd-home in crowd-init.properties
+
+
 ## 1.2.1
 
 * Pin ohai to below 4.0.0 due to incompatibility from nginx-proxy cookbook

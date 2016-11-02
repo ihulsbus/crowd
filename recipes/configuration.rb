@@ -17,7 +17,7 @@ if node['crowd']['install_type'] == 'standalone'
 
   replace "#{node['crowd']['install_path']}/crowd-webapp/WEB-INF/classes/crowd-init.properties" do
     replace '#crowd.home=/var/crowd-home'
-    with    "#{node['crowd']['home_path']}"
+    with    "crowd.home=#{node['crowd']['home_path']}"
   end
 
   template "#{node['crowd']['install_path']}/apache-tomcat/bin/setenv.sh" do
