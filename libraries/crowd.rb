@@ -60,7 +60,7 @@ module Crowd
       version = node['crowd']['version']
       sums = crowd_checksum_map[version]
 
-      raise "Crowd version #{version} is not supported by the cookbook" unless sums
+      fail "Crowd version #{version} is not supported by the cookbook" unless sums
 
       # Only standalone is supported by Crowd right now
       sums['tar']

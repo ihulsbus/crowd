@@ -12,7 +12,7 @@ default['crowd']['version']            = '2.10.1'
 default['crowd']['ssl']                = false
 default['crowd']['user']               = 'crowd'
 default['crowd']['group']              = 'crowd'
-# TODO needs to be done nicer but this is better then what is was :)
+# TODO: needs to be done nicer but this is better then what is was :)
 default['crowd']['pid']                = '/var/run/crowd.pid'
 
 # JVM
