@@ -1,10 +1,15 @@
 ## x.y.z (pending)
 
+## 1.2.0
+
+* Use JDK 8 by default
+* Make Crowd PID location configurable
 * Added support for MySQL - thanks wolf31o2
 * Added ability to set database type to `hsqldb` or `none` for a no-op.
   [[GH-14]](https://github.com/afklm/crowd/issues/14)
 * Slight tweaks to ark usage to standardize with Jira/Confluence
   cookbooks.[[GH-13]](https://github.com/afklm/crowd/issues/13)
+* Pin ohai version due to incompatibility from nginx-proxy cookbook
 
 ## 1.1.3
 
