@@ -1,17 +1,19 @@
 # Generic
 default['apt']['compile_time_update']                  = true
 default['build-essential']['compile_time']             = true
-default['java']['jdk_version']                         = '7'
+default['java']['jdk_version']                         = '8'
 
 # Crowd itself
 default['crowd']['home_path']          = '/var/atlassian/application-data/crowd'
 default['crowd']['init_type']          = 'sysv'
 default['crowd']['install_path']       = '/opt/atlassian/crowd'
 default['crowd']['install_type']       = 'standalone'
-default['crowd']['version']            = '2.9.1'
+default['crowd']['version']            = '2.10.1'
 default['crowd']['ssl']                = false
 default['crowd']['user']               = 'crowd'
 default['crowd']['group']              = 'crowd'
+# TODO needs to be done nicer but this is better then what is was :)
+default['crowd']['pid']                = '/var/run/crowd.pid'
 
 # JVM
 default['crowd']['jvm']['minimum_memory']  = '512m'

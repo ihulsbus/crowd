@@ -13,12 +13,11 @@ end
 
 # Only needed for standalone
 if node['crowd']['install_type'] == 'standalone'
-  template "#{node['crowd']['install_path']}/crowd-webapp/WEB-INF/classes/crowd-init.properties" do
-    source 'crowd-init.properties.erb'
-    mode '0644'
-    owner node['crowd']['user']
-    group node['crowd']['user']
-    notifies :restart, 'service[crowd]', :delayed
+  include_recipe 'patch'
+
+  replace "#{node['crowd']['install_path']}/crowd-webapp/WEB-INF/classes/crowd-init.properties" do
+    replace "#crowd.home=/var/crowd-home"
+    with    "#{node['crowd']['home_path']}"
   end
 
   template "#{node['crowd']['install_path']}/apache-tomcat/bin/setenv.sh" do
