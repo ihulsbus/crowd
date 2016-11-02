@@ -6,7 +6,7 @@ maintainer_email 'martijn.vanderkleijn@klm.com'
 license          'MIT'
 description      'Installs/Configures Atlassian Crowd'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '1.2.0'
+version          '1.2.1'
 
 recipe 'crowd::default',    'Installs/configures Atlassian CROWD'
 recipe 'crowd::standalone', 'Installs/configures CROWD via standalone archive'
@@ -25,7 +25,7 @@ depends 'apache2'
 depends 'ark'
 depends 'database'
 depends 'patch'
-depends 'ohai', '=2.0.3'
+depends 'ohai', '< 4.0.0' # fix for node['ohai']['plugin_path'] issue in nginx-proxy cookbook
 depends 'java'
 depends 'mysql', '>= 6.0'
 depends 'mysql_connector'

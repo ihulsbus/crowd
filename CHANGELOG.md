@@ -1,5 +1,9 @@
 ## x.y.z (pending)
 
+## 1.2.1
+
+* Pin ohai to below 4.0.0 due to incompatibility from nginx-proxy cookbook
+
 ## 1.2.0
 
 * Use JDK 8 by default
