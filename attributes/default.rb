@@ -5,7 +5,6 @@ default['java']['jdk_version']                         = '8'
 
 # Crowd itself
 default['crowd']['home_path']          = '/var/atlassian/application-data/crowd'
-default['crowd']['init_type']          = 'sysv'
 default['crowd']['install_path']       = '/opt/atlassian/crowd'
 default['crowd']['install_type']       = 'standalone'
 default['crowd']['version']            = '2.10.1'

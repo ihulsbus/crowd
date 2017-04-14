@@ -1,0 +1,13 @@
+[Unit]
+Description=Atlassian Crowd
+After=network.target
+
+[Service]
+Type=forking
+User=<%= node['crowd']['user'] %>
+PIDFile=/var/run/crowd.pid
+ExecStart=<%= node['crowd']['install_path'] %>/start_crowd.sh
+ExecStop=<%= node['crowd']['install_path'] %>/stop_crowd.sh
+
+[Install]
+WantedBy=multi-user.target
