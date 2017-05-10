@@ -70,6 +70,15 @@ module Crowd
     # rubocop:disable Metrics/MethodLength
     def crowd_checksum_map
       {
+        '2.12.0' => {
+          'tar' => 'f53d9d6c1028c6f12ec4292579608fce5f926e40437d7795859e765584d2d6cd'
+        },
+        '2.11.2' => {
+          'tar' => 'f6b539e100b09077e7448b3008364408d9437dd0f084ddd75fc7302549226c14'
+        },
+        '2.11.1' => {
+          'tar' => '472b9b4884591e87dec4ad4412dd2fc01a36e5eb2347ef7b3db9b16bcb4deb89'
+        },
         '2.10.1' => {
           'tar' => '86e9531c871be20761bcdfd6ea40d45ee74c7555609421283e69e1bfb1e784de'
         },
