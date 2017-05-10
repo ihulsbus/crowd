@@ -2,39 +2,65 @@
 module Crowd
   # Crowd::Helpers module
   module Helpers
-    class Crowd
-      # rubocop:disable Metrics/AbcSize
-      def self.settings(node)
-        begin
-          if Chef::Config[:solo]
-            begin
-              settings = Chef::DataBagItem.load('crowd', 'crowd')['local']
-            rescue
-              Chef::Log.info('No crowd data bag found')
-            end
-          else
-            begin
-              settings = Chef::EncryptedDataBagItem.load('crowd', 'crowd')[node.chef_environment]
-            rescue
-              Chef::Log.info('No crowd encrypted data bag found')
-            end
-          end
-        ensure
-          settings ||= node['crowd'].to_hash
 
-          case settings['database']['type']
-          when 'mysql'
-            settings['database']['port'] ||= 3306
-          when 'postgresql'
-            settings['database']['port'] ||= 5432
-          else
-            Chef::Log.warn('Unsupported database type - Use a supported type or handle DB creation/config in a wrapper cookbook!')
-          end
-        end
+    def crowd_database_connection
+      settings = merge_crowd_settings
 
-        settings
+      database_connection = {
+        host: settings['database']['host'],
+        port: settings['database']['port'],
+      }
+
+      case settings['database']['type']
+      when 'mysql'
+        database_connection[:username] = 'root'
+        database_connection[:password] = node['mysql']['server_root_password']
+      when 'postgresql'
+        database_connection[:username] = 'postgres'
+        database_connection[:password] = node['postgresql']['password']['postgres']
       end
-      # rubocop:enable Metrics/AbcSize
+
+      database_connection
+    end
+
+    # Merges Crowd settings from data bag and node attributes.
+    # Data dag settings always has a higher priority.
+    #
+    # @return [Hash] Settings hash
+    def merge_crowd_settings
+      @settings_from_data_bag ||= settings_from_data_bag
+      settings = Chef::Mixin::DeepMerge.deep_merge(
+        @settings_from_data_bag,
+        node['crowd'].to_hash
+      )
+
+      case settings['database']['type']
+      when 'mysql'
+        settings['database']['port'] ||= 3306
+      when 'postgresql'
+        settings['database']['port'] ||= 5432
+      when 'hsqldb'
+        # No-op. HSQLDB doesn't require any configuration.
+        Chef::Log.warn('HSQLDB should not be used in production.')
+      else
+        raise "Unsupported database type: #{settings['database']['type']}"
+      end
+
+      settings
+    end
+
+    # Fetchs Crowd settings from the data bag
+    #
+    # @return [Hash] Settings hash
+    def settings_from_data_bag
+      begin
+        item = data_bag_item(node['crowd']['data_bag_name'],
+                             node['crowd']['data_bag_item'])['crowd']
+        return item if item.is_a?(Hash)
+      rescue
+        Chef::Log.info('No crowd data bag found')
+      end
+      {}
     end
 
     # Returns download URL for Crowd artifact
@@ -123,3 +149,4 @@ end
 
 ::Chef::Recipe.send(:include, Crowd::Helpers)
 ::Chef::Resource.send(:include, Crowd::Helpers)
+::Chef::Mixin::Template::TemplateContext.send(:include, Crowd::Helpers)

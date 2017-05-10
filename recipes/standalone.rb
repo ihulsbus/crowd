@@ -5,7 +5,7 @@
 # Copyright 2015, KLM Royal Dutch Airlines
 #
 
-settings = Crowd.settings(node)
+settings = merge_crowd_settings
 
 directory File.dirname(node['crowd']['home_path']) do
   owner 'root'

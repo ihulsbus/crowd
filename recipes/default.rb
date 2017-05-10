@@ -10,7 +10,7 @@ when 'debian'
   include_recipe 'apt'
 end
 
-settings = Crowd.settings(node)
+settings = merge_crowd_settings
 
 include_recipe 'build-essential'
 include_recipe 'java'

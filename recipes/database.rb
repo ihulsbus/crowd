@@ -5,77 +5,70 @@
 # Copyright 2015, KLM Royal Dutch Airlines
 #
 
-settings = Crowd.settings(node)
-
-database_connection = {
-  :host => settings['database']['host'],
-  :port => settings['database']['port']
-}
+settings = merge_crowd_settings
 
 include_recipe 'build-essential'
 
 case settings['database']['type']
 when 'mysql'
-  directory "#{node['crowd']['home_dir']}/lib" do
-    owner node['crowd']['user']
-    group node['crowd']['group']
-    mode 0775
-    action :create
-  end
-
-  mysql_connector_j "#{node['crowd']['home_dir']}/lib"
-
-  mysql_client 'default' do
-    action :create
+  mysql2_chef_gem 'crowd' do
+    client_version settings['database']['version'] if settings['database']['version']
+    action :install
   end
 
   mysql_service 'crowd' do
-    version settings[:database][:version] || '5.6'
-    bind_address settings[:database][:host]
-    port settings[:database][:port]
+    version settings['database']['version'] if settings['database']['version']
+    bind_address settings['database']['host']
+    port settings['database']['port'].to_s
     data_dir node['mysql']['data_dir'] if node['mysql']['data_dir']
     initial_root_password node['mysql']['server_root_password']
     action [:create, :start]
   end
 
-  database_connection[:username] = 'root'
-  database_connection[:password] = node['mysql']['server_root_password']
-
-  mysql_database settings[:database][:name] do
-    connection database_connection
+  mysql_database settings['database']['name'] do
+    connection crowd_database_connection
     collation 'utf8_bin'
     encoding 'utf8'
     action :create
   end
 
-  mysql_database settings[:database][:name] do
-    connection database_connection
-    collation 'utf8_bin'
-    encoding 'utf8'
-    action :create
+  # See this MySQL bug: http://bugs.mysql.com/bug.php?id=31061
+  mysql_database_user '' do
+    connection crowd_database_connection
+    host 'localhost'
+    action :drop
   end
 
-when 'postgresql'
-  include_recipe 'postgresql::config_pgtune'
-  include_recipe 'postgresql::server'
-  include_recipe 'database::postgresql'
-  database_connection[:username] = 'postgres'
-  database_connection[:password] = node['postgresql']['password']['postgres']
-
-  postgresql_database settings['database']['name'] do
-    connection database_connection
-    connection_limit '-1'
-    encoding 'utf8'
-    action :create
-  end
-
-  postgresql_database_user settings['database']['user'] do
-    connection database_connection
+  mysql_database_user settings['database']['user'] do
+    connection crowd_database_connection
+    host '%'
     password settings['database']['password']
     database_name settings['database']['name']
     action [:create, :grant]
   end
 
-when 'hsqldb', 'none'
-  # no-op
+when 'postgresql'
+  include_recipe 'postgresql::server'
+  include_recipe 'database::postgresql'
+
+  postgresql_database_user settings['database']['user'] do
+    connection crowd_database_connection
+    password settings['database']['password']
+    action :create
+  end
+
+  postgresql_database settings['database']['name'] do
+    connection crowd_database_connection
+    connection_limit '-1'
+    # See: https://crowd.atlassian.com/display/JIRAKB/Health+Check%3A+Database+Collation
+    encoding 'utf8'
+    collation 'C'
+    template 'template0'
+    owner settings['database']['user']
+    action :create
+  end
+
+when 'hsqldb'
+  # No-op. HSQLDB doesn't require any configuration.
+  Chef::Log.warn('HSQLDB should not be used in production')
 end
