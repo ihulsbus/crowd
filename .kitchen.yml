@@ -3,22 +3,29 @@ driver_plugin: vagrant
 
 provisioner:
   name: chef_zero
-  require_chef_omnibus: latest
+  require_chef_omnibus: 12.18.31
 
 platforms:
-- name: ubuntu-12.04
-  run_list:
-  - recipe[apt]
-- name: ubuntu-14.04
-  run_list:
-  - recipe[apt]
-- name: centos-6.5
-  run_list:
-  - recipe[apt]
+  - name: ubuntu-12.04
+    run_list:
+    - recipe[apt]
+
+  - name: ubuntu-14.04
+    run_list:
+    - recipe[apt]
+
+  - name: ubuntu-16.04
+    run_list:
+    - recipe[apt]
+
+  - name: centos-6.5
+    run_list:
+    - recipe[apt]
 
 suites:
   - name: default
     run_list:
-      - recipe[crowd]
+    - recipe[crowd]
+    attributes:
       apt:
-        compiletime: true
+        compile_time_update: true
