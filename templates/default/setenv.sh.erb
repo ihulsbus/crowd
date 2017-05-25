@@ -4,7 +4,7 @@
 #
 
 # Make a switch here for jdk 7 or jdk 8, jdk8 ignores max perm size
-<% if node['java']['jdk_version'] <= '7' %>
+<% if node['java']['jdk_version'].to_s <= '7' %>
 JAVA_OPTS="-Xms<%= node['crowd']['jvm']['minimum_memory'] %> -Xmx<%= node['crowd']['jvm']['maximum_memory'] %> -XX:MaxPermSize=<%= node['crowd']['jvm']['maximum_permgen'] %> -Dfile.encoding=UTF-8 $JAVA_OPTS"
 <% else %>
 JAVA_OPTS="-Xms<%= node['crowd']['jvm']['minimum_memory'] %> -Xmx<%= node['crowd']['jvm']['maximum_memory'] %> -Dfile.encoding=UTF-8 $JAVA_OPTS"
