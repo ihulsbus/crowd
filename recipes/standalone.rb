@@ -16,12 +16,12 @@ directory File.dirname(node['crowd']['home_path']) do
 end
 
 user node['crowd']['user'] do
-  comment 'CROWD Service Account'
-  home node['crowd']['home_path']
-  shell '/bin/bash'
-  supports :manage_home => true
-  system true
-  action :create
+  comment     'CROWD Service Account'
+  home        node['crowd']['home_path']
+  shell       '/bin/bash'
+  manage_home true
+  system      true
+  action      :create
 end
 
 execute 'Generating Self-Signed Java Keystore' do

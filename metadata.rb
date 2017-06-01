@@ -8,6 +8,8 @@ description      'Installs/Configures Atlassian Crowd'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          '1.2.2'
 
+chef_version '>= 12.18.31' if respond_to?(:chef_version)
+
 recipe 'crowd::default',    'Installs/configures Atlassian CROWD'
 recipe 'crowd::standalone', 'Installs/configures CROWD via standalone archive'
 recipe 'crowd::database',   'Installs/configures MySQL/Postgres server, database, and user for CROWD'
