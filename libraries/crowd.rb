@@ -1,14 +1,16 @@
+# rubocop:disable ModuleLength
+# rubocop:disable Metrics/AbcSize
+
 # Crowd module
 module Crowd
   # Crowd::Helpers module
   module Helpers
-
     def crowd_database_connection
       settings = merge_crowd_settings
 
       database_connection = {
         host: settings['database']['host'],
-        port: settings['database']['port'],
+        port: settings['database']['port']
       }
 
       case settings['database']['type']
@@ -86,7 +88,7 @@ module Crowd
       version = node['crowd']['version']
       sums = crowd_checksum_map[version]
 
-      fail "Crowd version #{version} is not supported by the cookbook" unless sums
+      raise "Crowd version #{version} is not supported by the cookbook" unless sums
 
       # Only standalone is supported by Crowd right now
       sums['tar']
