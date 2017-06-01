@@ -13,7 +13,7 @@ chef_version '>= 12.18.31' if respond_to?(:chef_version)
 recipe 'crowd::default',    'Installs/configures Atlassian CROWD'
 recipe 'crowd::standalone', 'Installs/configures CROWD via standalone archive'
 recipe 'crowd::database',   'Installs/configures MySQL/Postgres server, database, and user for CROWD'
-recipe 'crowd::sysv',       'Installs/configures CROWD SysV init service'
+recipe 'crowd::init',       'Installs/configures CROWD init service'
 recipe 'crowd::apache2',    'Installs/configures Apache 2 as proxy (ports 80/443)'
 recipe 'crowd::nginx',      'Installs/configures Nginx as proxy (ports 80/443)'
 
