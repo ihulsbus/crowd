@@ -141,6 +141,9 @@ module Crowd
         '2.4.10' => {
           'tar' => 'fcb7dde464068c82558bb6baf6d86542a3aec3a18d8fe965a230a42290cd7e11'
         },
+		'3.0.0' => {
+		  'tar' => 'ff8d62481f3df7d84ee9e030f2d4472ab4d59f81768217f7155638c4c272e291'
+		},
 		'3.0.1' => {
 		  'tar' => '9987f758084006cfba75f6eb77f43315a5f25aed86a7f5f7d280ecf65f06ff9e'
 		}
