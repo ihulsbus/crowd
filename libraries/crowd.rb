@@ -140,7 +140,10 @@ module Crowd
         },
         '2.4.10' => {
           'tar' => 'fcb7dde464068c82558bb6baf6d86542a3aec3a18d8fe965a230a42290cd7e11'
-        }
+        },
+		'3.0.1' => {
+		  'tar' => '9987f758084006cfba75f6eb77f43315a5f25aed86a7f5f7d280ecf65f06ff9e'
+		}
       }
     end
     # rubocop:enable Metrics/MethodLength
