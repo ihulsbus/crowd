@@ -1,3 +1,8 @@
+LOOKING FOR NEW MAINTAINER
+==========================
+
+We've moved away from Chef and as such we're looking for a new maintainer for this cookbook. If you're interested, please hit the "Adopt me!" button in the Chef supermarket. We'll move from there.
+
 Crowd Cookbook
 ==============
 [![Chef cookbook](https://img.shields.io/cookbook/v/crowd.svg)](https://supermarket.chef.io/cookbooks/crowd)
