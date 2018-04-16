@@ -13,7 +13,7 @@ FoodCritic::Rake::LintTask.new(:foodcritic) do |t|
     tags: %w(~FC001 ~FC022 ~FC122),
     fail_tags: ['any'],
     # include_rules: '',
-    context: true
+    context: true,
   }
 end
 

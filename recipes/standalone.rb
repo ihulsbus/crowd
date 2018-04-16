@@ -19,7 +19,7 @@ user node['crowd']['user'] do
   comment 'CROWD Service Account'
   home node['crowd']['home_path']
   shell '/bin/bash'
-  supports :manage_home => true
+  manage_home true
   system true
   action :create
 end
