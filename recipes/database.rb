@@ -22,7 +22,7 @@ when 'mysql'
     port settings['database']['port'].to_s
     data_dir node['mysql']['data_dir'] if node['mysql']['data_dir']
     initial_root_password node['mysql']['server_root_password']
-    action [:create, :start]
+    action %I[create start]
   end
 
   mysql_database settings['database']['name'] do
@@ -42,9 +42,9 @@ when 'mysql'
   mysql_database_user settings['database']['user'] do
     connection crowd_database_connection
     host '%'
-    password settings['database']['password']
+    password      settings['database']['password']
     database_name settings['database']['name']
-    action [:create, :grant]
+    action %I[create grant]
   end
 
 when 'postgresql'

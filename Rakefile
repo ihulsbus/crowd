@@ -9,7 +9,7 @@ RuboCop::RakeTask.new(:rubocop)
 desc 'Run Foodcritic lint checks'
 FoodCritic::Rake::LintTask.new(:foodcritic) do |t|
   t.options = {
-    tags: %w(~FC001 ~FC022),
+    tags: %w[~FC001 ~FC022],
     fail_tags: ['any'],
     # include_rules: '',
     context: true
@@ -23,6 +23,6 @@ RSpec::Core::RakeTask.new(:spec) do |t|
 end
 
 desc 'Run all tests'
-task :style => [:rubocop, :foodcritic]
-task :test => [:style, :spec]
+task :style   => %I[rubocop foodcritic]
+task :test    => %I[style spec]
 task :default => :test
