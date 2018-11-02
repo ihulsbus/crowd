@@ -14,7 +14,6 @@ end
 
 group :test do
   gem 'chefspec'
-  gem 'codeclimate-test-reporter', require: nil
   gem 'foodcritic', '>=3.0.5'
   gem 'rake'
   gem 'rspec'
