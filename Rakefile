@@ -1,5 +1,6 @@
 require 'foodcritic'
 require 'rspec/core/rake_task'
+require 'cookstyle'
 require 'rubocop/rake_task'
 require 'rake/dsl_definition'
 
@@ -9,10 +10,10 @@ RuboCop::RakeTask.new(:rubocop)
 desc 'Run Foodcritic lint checks'
 FoodCritic::Rake::LintTask.new(:foodcritic) do |t|
   t.options = {
-    tags: %w[~FC001 ~FC022],
+    tags: %w(~FC001 ~FC022 ~FC122),
     fail_tags: ['any'],
     # include_rules: '',
-    context: true
+    context: true,
   }
 end
 

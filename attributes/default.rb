@@ -23,6 +23,7 @@ default['crowd']['jvm']['support_args']    = ''
 
 # Database
 # TODO: support MySQL 5.0.37+, Oracle 10.2.0.1+ / 11.2.0.2.0+
+default['postgresql']['pg_gem']['version']             = '0.21.0'    # the 'database' cookbook doesn't work with 1.0.0
 default['postgresql']['config_pgtune']['db_type']      = 'web'       # postgresql tuning for web
 default['postgresql']['config_pgtune']['total_memory'] = '1048576kB' # limit max memory of the postgresql server to 1G
 default['crowd']['database']['type']                   = 'postgresql'

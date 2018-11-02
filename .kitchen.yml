@@ -14,7 +14,11 @@ platforms:
     run_list:
     - recipe[apt]
 
-  - name: centos-6.5
+  - name: centos-6
+    run_list:
+    - recipe[apt]
+
+  - name: centos-7
     run_list:
     - recipe[apt]
 
