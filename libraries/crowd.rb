@@ -3,6 +3,7 @@
 
 # Crowd module
 module Crowd
+
   # Crowd::Helpers module
   module Helpers
     def crowd_database_connection

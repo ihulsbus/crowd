@@ -1,10 +1,10 @@
 name             'crowd'
-source_url       'https://github.com/afklm/crowd'
-issues_url       'https://github.com/afklm/crowd/issues'
-maintainer       'KLM Royal Dutch Airlines'
-maintainer_email 'martijn.vanderkleijn@klm.com'
+source_url       'https://github.com/katbyte/chef-crowd'
+issues_url       'https://github.com/katbyte/chef-crowd/issues'
+maintainer       'katbyte'
+maintainer_email 'kt@katbyte.me'
 license          'MIT'
-description      'Installs/Configures Atlassian Crowd'
+description      'Manages an Atlassian Crowd installation'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          '1.2.2'
 
