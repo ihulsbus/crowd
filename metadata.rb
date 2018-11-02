@@ -25,15 +25,16 @@ end
 depends 'apt'
 depends 'apache2'
 depends 'ark'
+depends 'build-essential'
 depends 'database'
 depends 'patch'
-depends 'ohai', '< 4.0.0' # fix for node['ohai']['plugin_path'] issue in nginx-proxy cookbook
 depends 'java'
 depends 'mysql', '>= 6.0'
 depends 'mysql_connector'
 depends 'mysql2_chef_gem'
-depends 'build-essential'
 depends 'nginx', '>=2.7.6'
 depends 'nginx-proxy'
 depends 'nokogiri'
+depends 'ohai', '< 4.0.0' # fix for node['ohai']['plugin_path'] issue in nginx-proxy cookbook
 depends 'postgresql', '>= 3.4.16'
+depends 'seven_zip', '~> 2.0'
