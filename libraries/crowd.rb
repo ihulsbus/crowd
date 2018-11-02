@@ -1,5 +1,9 @@
+# rubocop:disable ModuleLength
+# rubocop:disable Metrics/AbcSize
+
 # Crowd module
 module Crowd
+
   # Crowd::Helpers module
   module Helpers
     def crowd_database_connection
@@ -7,7 +11,7 @@ module Crowd
 
       database_connection = {
         host: settings['database']['host'],
-        port: settings['database']['port'],
+        port: settings['database']['port']
       }
 
       case settings['database']['type']
@@ -137,8 +141,14 @@ module Crowd
           'tar' => '95bdba3729b7b7e489a8b198315518bcce1c9cc1cbb95ebd68b29bd31cf0efa5',
         },
         '2.4.10' => {
-          'tar' => 'fcb7dde464068c82558bb6baf6d86542a3aec3a18d8fe965a230a42290cd7e11',
+          'tar' => 'fcb7dde464068c82558bb6baf6d86542a3aec3a18d8fe965a230a42290cd7e11'
         },
+        '3.0.0' => {
+          'tar' => 'ff8d62481f3df7d84ee9e030f2d4472ab4d59f81768217f7155638c4c272e291'
+        },
+        '3.0.1' => {
+          'tar' => '9987f758084006cfba75f6eb77f43315a5f25aed86a7f5f7d280ecf65f06ff9e'
+        }
       }
     end
   end
