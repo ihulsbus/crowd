@@ -19,7 +19,6 @@ group :test do
   gem 'rubocop'
   gem 'rake'
   gem 'rspec'
-  gem 'rubocop'
 end
 
 group :foss do
