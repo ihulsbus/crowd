@@ -1,7 +1,7 @@
 Crowd Cookbook
 ==============
 [![Chef cookbook](https://img.shields.io/cookbook/v/crowd.svg)](https://supermarket.chef.io/cookbooks/crowd)
-[![Build Status](https://travis-ci.org/katbyte/crowd.svg?branch=master)](https://travis-ci.org/katbyte/crowd)
+[![CircleCI](https://circleci.com/gh/katbyte/chef-crowd/tree/master.svg?style=svg)](https://circleci.com/gh/katbyte/chef-crowd/tree/master)
 
 This cookbook installs Atlassian's Crowd. It defaults to using PostgreSQL for
 its DB and Nginx for its proxy.
