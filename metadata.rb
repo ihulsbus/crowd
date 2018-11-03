@@ -36,5 +36,5 @@ depends 'nginx', '>=2.7.6'
 depends 'nginx-proxy'
 depends 'nokogiri'
 depends 'ohai', '< 4.0.0' # fix for node['ohai']['plugin_path'] issue in nginx-proxy cookbook
-depends 'postgresql', '>= 3.4.16'
+depends 'postgresql', '< 7.0.0'
 depends 'seven_zip', '~> 2.0'
