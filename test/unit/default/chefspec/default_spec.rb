@@ -14,8 +14,4 @@ describe 'crowd::default' do
       node.set['postgresql']['password']['postgres'] = 'pswpsw123'
     end.converge(described_recipe)
   end
-
-  it 'should include the apt::default recipe when platform is debian-based' do
-    expect(chef_run).to include_recipe('apt::default')
-  end
 end

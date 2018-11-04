@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'berkshelf',  :group => %I[production integration]
-gem 'chef',       :group => %I[production test integration]
+gem 'berkshelf',  :group => %I(production integration)
+gem 'chef',       :group => %I(production test integration)
 
 group :production do
   gem 'kitchen-openstack'
@@ -19,7 +19,6 @@ group :test do
   gem 'rubocop'
   gem 'rake'
   gem 'rspec'
-  gem 'rubocop'
 end
 
 group :foss do
