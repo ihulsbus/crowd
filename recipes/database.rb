@@ -22,7 +22,7 @@ when 'mysql'
     port settings['database']['port'].to_s
     data_dir node['mysql']['data_dir'] if node['mysql']['data_dir']
     initial_root_password node['mysql']['server_root_password']
-    action %I[create start]
+    action %I(create start)
   end
 
   mysql_database settings['database']['name'] do
@@ -44,7 +44,7 @@ when 'mysql'
     host '%'
     password      settings['database']['password']
     database_name settings['database']['name']
-    action %I[create grant]
+    action %I(create grant)
   end
 
 when 'postgresql'
