@@ -25,7 +25,7 @@ jobs:
 
     #save gem cache
     - save_cache:
-        name: Cache Gems
+        name: Save Gem Cache
         key: gemcache-v2-{{ checksum "Gemfile" }}
         paths:
         - vendor/bundle

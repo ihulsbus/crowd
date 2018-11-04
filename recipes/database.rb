@@ -7,7 +7,7 @@
 
 settings = merge_crowd_settings
 
-include_recipe 'build-essential'
+include_recipe 'build-essential' # part of chef 14
 
 case settings['database']['type']
 when 'mysql'
