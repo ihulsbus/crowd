@@ -1,5 +1,6 @@
 Crowd Cookbook
 ==============
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/868e04bcbe0e42678d49941a33f60afd)](https://app.codacy.com/app/katbyte/chef-crowd?utm_source=github.com&utm_medium=referral&utm_content=katbyte/chef-crowd&utm_campaign=Badge_Grade_Dashboard)
 [![Chef cookbook](https://img.shields.io/cookbook/v/crowd.svg)](https://supermarket.chef.io/cookbooks/crowd)
 [![Maintainability](https://api.codeclimate.com/v1/badges/f4ef1cdedbbab2a0bb2a/maintainability)](https://codeclimate.com/github/katbyte/chef-crowd/maintainability)
 [![CircleCI](https://circleci.com/gh/katbyte/chef-crowd/tree/master.svg?style=svg)](https://circleci.com/gh/katbyte/chef-crowd/tree/master)
