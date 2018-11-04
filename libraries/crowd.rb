@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # Crowd module
 module Crowd
   # Crowd::Helpers module

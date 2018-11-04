@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # Generic
 default['apt']['compile_time_update']                  = true
 default['build-essential']['compile_time']             = true

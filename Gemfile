@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 source 'https://rubygems.org'
 
 gem 'berkshelf',  :group => %I(production integration)
@@ -14,11 +15,11 @@ end
 
 group :test do
   gem 'chefspec'
-  gem 'foodcritic', '>=3.0.5'
   gem 'cookstyle',  '~> 2.1'
-  gem 'rubocop'
+  gem 'foodcritic', '>=3.0.5'
   gem 'rake'
   gem 'rspec'
+  gem 'rubocop'
 end
 
 group :foss do

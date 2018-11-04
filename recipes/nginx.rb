@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 #
 # Cookbook Name:: crowd
 # Recipe:: nginx
@@ -24,8 +25,8 @@ include_recipe 'nokogiri::chefgem'
 ruby_block 'compression' do
   block do
     require 'nokogiri'
-    f = File.read("#{node['crowd']['install_path']}/apache-tomcat/conf/server.xml")
-    doc = Nokogiri::XML(f)
+    file = File.read("#{node['crowd']['install_path']}/apache-tomcat/conf/server.xml")
+    doc = Nokogiri::XML(file)
     doc.xpath('/Server/Service/Connector[@port="8095"]').each do |change|
       next unless change.name == 'Connector'
       change['compression'] = 'on'
@@ -40,8 +41,8 @@ end
 ruby_block 'remoteIpValve' do
   block do
     require 'nokogiri'
-    f = File.read("#{node['crowd']['install_path']}/apache-tomcat/conf/server.xml")
-    doc = Nokogiri::XML(f)
+    file = File.read("#{node['crowd']['install_path']}/apache-tomcat/conf/server.xml")
+    doc = Nokogiri::XML(file)
     doc.xpath('/Server/Service/Engine[@name="Catalina"]').each do |change|
       valve = Nokogiri::XML::Node.new 'Valve', doc
       valve['className'] = 'org.apache.catalina.valves.RemoteIpValve'

@@ -1,8 +1,17 @@
 AllCops:
+  Include:
+  - Berksfile
+  - Gemfile
+  - Guardfile
+  - Rakefile
   Exclude:
-    - vendor/**/*
-Documentation:
-  Enabled: false
+  - test/**/*
+  - spec/**/*
+  - vendor/**/*
+  - ruby/**/*
+  - Vagrantfile
+  TargetRubyVersion: 2.4
+
 AlignParameters:
   Enabled: false
 Encoding:
@@ -13,18 +22,19 @@ LineLength:
   Enabled: false
 MethodLength:
   Max: 30
-#
-# we like our neatly-aligned code too much
-#
-SpaceBeforeFirstArg:
+  Exclude:
+  - "libraries/crowd.rb"
+Style/NumericLiteralPrefix:
   Enabled: false
-
-# TODO: move to compact style later?
-ClassAndModuleChildren:
-  Enabled: false
-
-ShadowingOuterLocalVariable:
-  Enabled: false
-
-Style/FileName:
-  Enabled: false
+Metrics/ModuleLength:
+  Exclude:
+  - "libraries/crowd.rb"
+Metrics/AbcSize:
+  Exclude:
+  - "libraries/crowd.rb"
+Metrics/CyclomaticComplexity:
+  Exclude:
+  - "libraries/crowd.rb"
+Metrics/PerceivedComplexity:
+  Exclude:
+  - "libraries/crowd.rb"

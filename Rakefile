@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'cookstyle'
 require 'foodcritic'
 require 'rake/dsl_definition'

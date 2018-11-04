@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 name             'crowd'
 source_url       'https://github.com/katbyte/chef-crowd'
 issues_url       'https://github.com/katbyte/chef-crowd/issues'
