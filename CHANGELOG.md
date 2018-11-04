@@ -1,4 +1,4 @@
-## 1.3.0 (pending)
+## 1.3.0 (2018-11-04)
 
 * Prevented java version 'comparison of Fixnum with String failed' error ([#20](https://github.com/katbyte/chef-crowd/isues/16))
 * Crowd 3.0.1 compatibility ([#22](https://github.com/katbyte/chef-crowd/isues/16))
