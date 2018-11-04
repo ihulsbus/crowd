@@ -1,27 +1,21 @@
 # frozen_string_literal: true
 source 'https://rubygems.org'
 
-gem 'berkshelf',  :group => %I(production integration)
-gem 'chef',       :group => %I(production test integration)
+gem 'rake'
 
-group :production do
-  gem 'kitchen-openstack'
-end
-
-group :integration do
-  gem 'kitchen-vagrant'
-  gem 'test-kitchen'
+group :test, :integration do
+  gem 'berkshelf', '~> 4.0'
 end
 
 group :test do
   gem 'chefspec'
-  gem 'cookstyle',  '~> 2.1'
-  gem 'foodcritic', '>=3.0.5'
-  gem 'rake'
+  gem 'cookstyle'
+  gem 'foodcritic'
   gem 'rspec'
   gem 'rubocop'
 end
 
-group :foss do
-  gem 'stove'
+group :integration do
+  gem 'kitchen-vagrant', '~> 0.15'
+  gem 'test-kitchen', '~> 1.3'
 end
