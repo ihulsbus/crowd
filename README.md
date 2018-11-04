@@ -1,6 +1,7 @@
 Crowd Cookbook
 ==============
 [![Chef cookbook](https://img.shields.io/cookbook/v/crowd.svg)](https://supermarket.chef.io/cookbooks/crowd)
+[![Maintainability](https://api.codeclimate.com/v1/badges/f4ef1cdedbbab2a0bb2a/maintainability)](https://codeclimate.com/github/katbyte/chef-crowd/maintainability)
 [![CircleCI](https://circleci.com/gh/katbyte/chef-crowd/tree/master.svg?style=svg)](https://circleci.com/gh/katbyte/chef-crowd/tree/master)
 
 This cookbook installs Atlassian's Crowd. It defaults to using PostgreSQL for
