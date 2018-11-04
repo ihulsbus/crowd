@@ -1,9 +1,9 @@
 ## 1.3.0 (2018-11-04)
 
 * Prevented java version 'comparison of Fixnum with String failed' error ([#20](https://github.com/katbyte/chef-crowd/isues/16))
-* Crowd 3.0.1 compatibility ([#22](https://github.com/katbyte/chef-crowd/isues/16))
-* Support for Ubuntu 16.04 ([#18](https://github.com/katbyte/chef-crowd/isues/16))
+* Support for Ubuntu 16.04 ([#18](https://github.com/katbyte/chef-crowd/isues/18))
 * Added checksums fo 2.8.8, 2.9.5, 2.10.1 ([#16](https://github.com/katbyte/chef-crowd/isues/16))
+* Crowd 3.0.1 compatibility ([#22](https://github.com/katbyte/chef-crowd/isues/22))
 
 ## 1.2.2 (2016-11-02)
 
