@@ -36,7 +36,7 @@ default['crowd']['database']['port']                   = 5432
 default['crowd']['database']['user']                   = 'crowd'
 
 # Proxy - Generic
-default['crowd']['proxy']['enabled']        = true
+default['crowd']['proxy']['enabled']        = false
 default['crowd']['proxy']['type']           = 'nginx'
 default['crowd']['proxy']['url']            = node['fqdn']
 default['crowd']['proxy']['ssl_key']        = ''

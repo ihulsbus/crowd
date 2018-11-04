@@ -33,7 +33,7 @@ depends 'java'
 depends 'mysql', '>= 6.0'
 depends 'mysql_connector'
 depends 'mysql2_chef_gem'
-depends 'nginx', '>=2.7.6'
+depends 'nginx', '~> 2.7'
 depends 'nginx-proxy'
 depends 'nokogiri'
 depends 'ohai', '< 4.0.0' # fix for node['ohai']['plugin_path'] issue in nginx-proxy cookbook
