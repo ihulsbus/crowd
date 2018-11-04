@@ -1,7 +1,5 @@
 ## 1.3.0 (pending)
 
-* moved to Circle CI for repo CI
-* general cleanup & getting the tests to run (and pass) by pinning dependencies
 * Prevented java version 'comparison of Fixnum with String failed' error ([#20](https://github.com/katbyte/chef-crowd/isues/16))
 * Crowd 3.0.1 compatibility ([#22](https://github.com/katbyte/chef-crowd/isues/16))
 * Support for Ubuntu 16.04 ([#18](https://github.com/katbyte/chef-crowd/isues/16))
