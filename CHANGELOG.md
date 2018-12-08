@@ -1,9 +1,14 @@
+## 1.4.0 (2018-12-08)
+
+* Added checksums for most Crowd versions from `2.0.0` -> `3.3.0`
+* Default version is now `3.3.0`
+
 ## 1.3.0 (2018-11-04)
 
 * Prevented java version 'comparison of Fixnum with String failed' error ([#20](https://github.com/katbyte/chef-crowd/isues/16))
-* Support for Ubuntu 16.04 ([#18](https://github.com/katbyte/chef-crowd/isues/18))
-* Added checksums fo 2.8.8, 2.9.5, 2.10.1 ([#16](https://github.com/katbyte/chef-crowd/isues/16))
-* Crowd 3.0.1 compatibility ([#22](https://github.com/katbyte/chef-crowd/isues/22))
+* Support for Ubuntu `16.04` ([#18](https://github.com/katbyte/chef-crowd/isues/18))
+* Added checksums fo `2.8.8`, `2.9.5`, `2.10.1` ([#16](https://github.com/katbyte/chef-crowd/isues/16))
+* Crowd `3.0.1` compatibility ([#22](https://github.com/katbyte/chef-crowd/isues/22))
 
 ## 1.2.2 (2016-11-02)
 
@@ -11,11 +16,11 @@
 
 ## 1.2.1 (2016-11-02)
 
-* Pin ohai to below 4.0.0 due to incompatibility from nginx-proxy cookbook
+* Pin ohai to below `4.0.0` due to incompatibility from nginx-proxy cookbook
 
 ## 1.2.0 (2016-11-02)
 
-* Use JDK 8 by default
+* Use JDK `8` by default
 * Make Crowd PID location configurable
 * Added support for MySQL - thanks wolf31o2
 * Added ability to set database type to `hsqldb` or `none` for a no-op. ([#14](https://github.com/katbyte/chef-crowd/isues/14))
@@ -24,7 +29,7 @@
 
 ## 1.1.3 (2016-04-19)
 
-* Add Crowd 2.8.4 support
+* Add Crowd `2.8.4` support
 * Loosen Postgresql cookbook requirement
 * Fix rubocop issues
 

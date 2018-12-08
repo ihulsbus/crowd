@@ -8,7 +8,7 @@ default['java']['jdk_version']                         = '8'
 default['crowd']['home_path']          = '/var/atlassian/application-data/crowd'
 default['crowd']['install_path']       = '/opt/atlassian/crowd'
 default['crowd']['install_type']       = 'standalone'
-default['crowd']['version']            = '2.11.2'
+default['crowd']['version']            = '3.3.0'
 default['crowd']['ssl']                = false
 default['crowd']['user']               = 'crowd'
 default['crowd']['group']              = 'crowd'
@@ -31,7 +31,7 @@ default['crowd']['database']['type']                   = 'postgresql'
 default['crowd']['database']['version']                = '9.3'
 default['crowd']['database']['host']                   = 'localhost'
 default['crowd']['database']['name']                   = 'crowd'
-default['crowd']['database']['password']               = 'changeit'
+default['crowd']['database']['password']               = 'climbit'
 default['crowd']['database']['port']                   = 5432
 default['crowd']['database']['user']                   = 'crowd'
 
